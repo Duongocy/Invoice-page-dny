@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="dnystyle.css">
+</head>
+<body>
+    <div class = "listofinvoice">
+        <!-- Nội dung phần danh sách các invoice và phần tạo invoice mới -->
+            <div class="co-title">
+                List Of Invoice
+            </div>
+            <div class="user-name">
+                User :
+            </div>
+            <div class = "invoice-list"> <!--bảng chứa list các invoice -->
+                <table id = "banginvoice">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Title</th>
+                            <th>Customer</th>
+                            <th>Amount</th>
+                            <th>Date Create</th>
+                            <th>Detail</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <!-- List của các hóa đơn sẽ hiển thị ở đây  -->
+                    </tbody>
+                </table>
+            </div>
+            <div class="createnewinvoice">
+                <a href="newinvoice.html"> <button id="creatinvoicebtn">Create New Invoice</button></a>
+            </div>
+    </div>
+    <div class ="detailofinvoice">
+        <!-- Nội dung phần chi tiết từng invoice -->
+         <div class ="co-title">
+            Detail of invoice
+         </div>
+         <div class="khungchuainvoice">
+            <div class="invoiceheader">
+                <div id="invoicetitle">
+                    Invoice Title : Qua sinh nhat cho mama
+                </div>
+                <div class="shopname">
+                    Shop Name : My Lovely Shop
+                </div>
+                <div id="customername">
+                    Customer : Anh Trai Say Hi
+                </div>
+            </div>
+            <div class="containerbangchitietinvoice">
+                <!-- Bảng ghi chi tiết các mặc hàng trong hóa đơn -->
+                <table id = "bangchitietinvoice">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Item Name</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th>Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- List của các sản phẩm sẽ hiển thị ở đây  -->
+                </tbody>
+            </table>
+            </div>
+            <div class="invoivefooter">
+                <div class="invoicecreatdate" id="invoicecreatdateid">
+                    Invoice creat date : Jun-20-2025
+                </div>
+                <div class="invoicethankyou">
+                    Thank You for your shopping!
+                </div>
+                <button class="printbutton">Print Invoice</button>
+            </div>
+         </div>
+    </div>
+    <script src="dnyjava.js"></script>
+</body>
+</html>

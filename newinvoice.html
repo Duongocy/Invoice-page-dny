@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="dnystyle.css">
+</head>
+<body>
+    <!-- Phần tạo new invoice -->
+     <div class="new-invoice-page">
+         <div class="co-title">
+            Create New Invoice
+         </div> 
+         <div class="new-invoice">
+            <div class="new-invoice-creat">
+                <!-- Thông tin về invoice tile và customer  -->
+                 <div class="newinvoice-title">
+                    Invoice Title
+                 </div>
+                 <input id="input-newinvoice-title" type="text" placeholder="Invoice title" required>
+                 <div class="newinvoice-customer">
+                    Customer 
+                 </div>
+                 <input id="input-newinvoice-customer" type="text" placeholder="Customer name" required>
+
+                 <div id="newinvoice-title">
+                  
+                 </div>
+                 <div id="customer-name">
+                  
+                 </div>
+
+                 <button id="createnewinvoicebutton">Creat New Invoice</button>
+            </div>
+            <div class="new-invoice-add-item">
+                <!-- Thông tin item -->
+                 <div id="newinvoice-additem-title">
+                    Add Item for Invoice of Customer
+                 </div>
+                 <div class="input-new-product-information">
+                    <input id="new-item-name" type="text" placeholder="Product name" required>
+                    <input id="new-item-price" type="number" placeholder="Price" required>
+                    <input id="new-item-quantity" type="number" placeholder="Quantity" required>
+                    <button id="add-new-item-btn">Add new Product</button>
+                 </div>
+                 <div class="new-invoice-container">
+                  <table id="new-item-table">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Product name</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <!-- Các item hàng hóa sẽ được hiển thị ở đây -->
+                     </tbody>
+                  </table>
+                 </div>
+            </div>    
+         </div>    
+         <div class="submit-new-invoice-container">
+            <button id="submit-new-invoice-btn">Submit Invoice</button>
+         </div>
+     </div>       
+    <script src="createinvoice.js"></script>
+</body>
+</html>
