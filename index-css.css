@@ -139,3 +139,41 @@ td:nth-child(5) {
     flex-direction: column;
     align-items: center;
 }
+
+/* Phần dành cho màn hình điện thoại */
+@media only screen and (max-width: 768px) {
+/* Phần dành cho trang index  */
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .listofinvoice {
+        width: 100vw;
+        /* height : 50vh; */
+    }
+
+    .detailofinvoice {
+        width: 100vw;
+        /* border:solid 1px rgba(2, 3, 18, 0.867); */
+        /* height:50vh; */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .khungchuainvoice {
+        width: 95%;
+    }
+
+    #banginvoice th:nth-child(1),
+    #banginvoice td:nth-child(1) {
+        display: none;
+    }
+
+    #banginvoice th:nth-child(5),
+    #banginvoice td:nth-child(5) {
+        display: none;
+    }
+}
