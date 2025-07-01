@@ -185,4 +185,7 @@ th,td{
         width:50%;
         margin-top: 15px;
     }
+    #input-newinvoice-title,#input-newinvoice-customer,#new-item-name,#new-item-price,#new-item-quantity{
+        height:20px;
+    }
 }
