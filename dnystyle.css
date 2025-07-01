@@ -146,3 +146,14 @@ th,td{
 #new-item-table{
     width:100%;
 }
+
+/* Phần dành cho màn hình điện thoại  */
+@media only screen and (max-width: 768px){
+    .new-invoice {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
+            gap: 30px;
+            }
+}
