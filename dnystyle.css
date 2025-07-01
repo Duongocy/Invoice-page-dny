@@ -174,12 +174,15 @@ th,td{
             width:100%;
             }            
     .product-info{
+            display:flex;
+            flex-direction: column;
             width:100%;
     }    
-    #new-item-name,#new-item-price,#new-item-quantity{
+    .product-info {
             width:100%;
     }  
     #createnewinvoicebutton,#add-new-item-btn{
         width:50%;
+        margin-top: 15px;
     }
 }
