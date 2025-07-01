@@ -180,6 +180,15 @@ th,td{
     }     
     #createnewinvoicebutton,#add-new-item-btn{
         width:50%;
+        height : 30px;
+        margin-top: 15px;
+    }
+    .submit-new-invoice-container{
+        width:95%;
+    }
+    #submit-new-invoice-btn{
+        width : 100%;
+        height:30px;
         margin-top: 15px;
     }
     #input-newinvoice-title,#input-newinvoice-customer,#new-item-name,#new-item-price,#new-item-quantity{
