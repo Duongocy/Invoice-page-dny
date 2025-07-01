@@ -186,6 +186,6 @@ th,td{
         margin-top: 15px;
     }
     #input-newinvoice-title,#input-newinvoice-customer,#new-item-name,#new-item-price,#new-item-quantity{
-        height:20px;
+        height:30px;
     }
 }
