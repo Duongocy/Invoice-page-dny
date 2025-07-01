@@ -15,11 +15,11 @@
          <div class="new-invoice">
             <div class="new-invoice-creat">
                 <!-- Thông tin về invoice tile và customer  -->
-                 <div class="newinvoice-title">
+                 <div class="input-title">
                     Invoice Title
                  </div>
                  <input id="input-newinvoice-title" type="text" placeholder="Invoice title" required>
-                 <div class="newinvoice-customer">
+                 <div class="input-title">
                     Customer 
                  </div>
                  <input id="input-newinvoice-customer" type="text" placeholder="Customer name" required>
@@ -37,22 +37,27 @@
                 <!-- Thông tin item -->
 
                  <div class="input-new-product-information">
-                  <div class="product-info">
-                     <p>Product name</p>
-                     <input id="new-item-name" type="text" placeholder="Product name" required>
-                  </div>
-                  <div class="product-info">
-                     <p>Price</p>
-                     <input id="new-item-price" type="number" placeholder="Price" required>
-                  </div>
-                  <div class="product-info">
-                     <p>Quantity</p>
-                     <input id="new-item-quantity" type="number" placeholder="Quantity" required>
-                  </div>
-                    
-                    
-                    
-                    <button id="add-new-item-btn">Add new Product</button>
+                     <div class="product-info">
+                        <div class="input-title">
+                           Product name
+                        </div>
+                        <input id="new-item-name" type="text" placeholder="Product name" required>
+                     </div>
+                     <div class="product-info">
+                        <div class="input-title">
+                           Price
+                        </div>
+                        <input id="new-item-price" type="number" placeholder="Price" required>
+                     </div>
+                     <div class="product-info">
+                        <div class="input-title">
+                           Quantity
+                        </div>
+                        <input id="new-item-quantity" type="number" placeholder="Quantity" required>
+                     </div>
+                     <div class="product-info">
+                        <button id="add-new-item-btn">Add new Product</button>
+                     </div>
                  </div>
                  <div class="new-invoice-container">
                   <table id="new-item-table">
