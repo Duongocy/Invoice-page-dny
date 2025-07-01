@@ -152,13 +152,13 @@ th,td{
     .new-invoice-creat {
             display: flex;
             flex-direction: column;
-            width: 100%;
+            width: 97%;
             }
     .new-invoice {
             display: flex;
             flex-direction: column;
             justify-content: center;
-            width: 100%;
+            width: 97%;
             gap: 30px;
             }
     .input-new-product-information{
@@ -171,21 +171,18 @@ th,td{
     .new-invoice-add-item{
             display:flex;
             flex-direction: column;
-            width:100%;
+            width:97%;
             }            
     .product-info{
             display:flex;
             flex-direction: column;
             width:100%;
-    }    
-    .product-info {
-            width:100%;
-    }  
+    }     
     #createnewinvoicebutton,#add-new-item-btn{
         width:50%;
         margin-top: 15px;
     }
     #input-newinvoice-title,#input-newinvoice-customer,#new-item-name,#new-item-price,#new-item-quantity{
-        height:30px;
+        height:25px;
     }
 }
