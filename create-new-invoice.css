@@ -58,6 +58,16 @@
     align-items: center;
     /* border: solid 1px rgba(2, 3, 18, 0.867);  */
 }
+table {
+    width: 95%;
+    border: solid 1px rgba(2, 3, 18, 0.867);
+}
+
+th,
+td {
+    border: solid 1px rgba(2, 3, 18, 0.867);
+    height: 30px;
+}
 #new-item-table{
     width:100%;
 }
