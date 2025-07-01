@@ -3,7 +3,6 @@ let invoice_title = document.getElementById('newinvoice-title');
 let invoice_customer = document.getElementById('customer-name');
 let input_invoice_title = document.getElementById('input-newinvoice-title');
 let input_invoice_customer = document.getElementById('input-newinvoice-customer');
-let add_item_header = document.getElementById('newinvoice-additem-title');
 //Khai báo đối tượng cho phần add new item
 let new_item_table_body = document.getElementById('new-item-table').getElementsByTagName('tbody')[0];
 let add_new_item_btn = document.getElementById('add-new-item-btn');
@@ -30,7 +29,6 @@ create_new_invoice_btn.addEventListener('click',function(){
             invoice_date = new Date();
             invoice_title.textContent = 'Invoice title : '+input_invoice_title.value;
             invoice_customer.textContent ='Customer : '+ input_invoice_customer.value;
-            add_item_header.textContent = 'Add item for invoice of '+input_invoice_customer.value;
             while(new_item_table_body.rows.length>0){
             new_item_table_body.deleteRow(0);
         }
