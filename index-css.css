@@ -1,0 +1,141 @@
+body {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+}
+/* Phần liệt kê danh sách các invoice theo user */
+.listofinvoice {
+    width: 62vw;
+}   
+
+.co-title {
+    font-size: 30px;
+    padding: 24px;
+}
+
+.user-name {
+    padding-left: 24px;
+    font-size: 16px;
+}
+
+.invoice-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#banginvoice {
+    width: 95%;
+    table-layout: fixed;
+    /* Sử dụng chế độ cố định cho bảng */
+}
+
+.createnewinvoice {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 24px;
+}
+
+/* độ rộng các cột  */
+#banginvoice th:nth-child(1),
+#banginvoice td:nth-child(1) {
+    width: 15%;
+    text-align: center;
+}
+
+#banginvoice th:nth-child(2),
+#banginvoice td:nth-child(2) {
+    width: 20%;
+}
+
+#banginvoice th:nth-child(3),
+#banginvoice td:nth-child(3) {
+    width: 15%;
+}
+
+#banginvoice th:nth-child(4),
+#banginvoice td:nth-child(4) {
+    width: 10%;
+    text-align: center;
+}
+
+#banginvoice th:nth-child(5),
+#banginvoice td:nth-child(5) {
+    width: 30%;
+    text-align: center;
+}
+
+#banginvoice th:nth-child(6),
+#banginvoice td:nth-child(6) {
+    width: 10%;
+    text-align: center;
+}
+
+/* Phần hiển thị chi tiết các món đồ từng invoice */
+.detailofinvoice {
+    width: 38vw;
+    border: solid 1px rgba(2, 3, 18, 0.867);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.khungchuainvoice {
+    width: 90%;
+}
+
+.containerbangchitietinvoice {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+table { 
+    width: 95%;
+    border: solid 1px rgba(2, 3, 18, 0.867);
+}
+/* cân nhắc thay table bằng id bangchitietinvoice */
+
+th,
+td {
+    border: solid 1px rgba(2, 3, 18, 0.867);
+    height: 30px;
+}
+
+/* độ rộng các cột cho bảng chi tiết invoice  */
+#bangchitietinvoice th:nth-child(1),
+td:nth-child(1) {
+    width: 10%;
+    text-align: center;
+}
+
+#bangchitietinvoice th:nth-child(2),
+td:nth-child(2) {
+    width: 20%;
+    text-align: left;
+}
+
+#bangchitietinvoice th:nth-child(3),
+td:nth-child(3) {
+    width: 15%;
+    text-align: center;
+}
+
+#bangchitietinvoice th:nth-child(4),
+td:nth-child(4) {
+    width: 15%;
+    text-align: center;
+}
+
+#bangchitietinvoice th:nth-child(5),
+td:nth-child(5) {
+    width: 30%;
+    text-align: center;
+}
+
+.invoivefooter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
