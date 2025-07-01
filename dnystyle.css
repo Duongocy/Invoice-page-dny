@@ -177,6 +177,9 @@ th,td{
             width:100%;
     }    
     #new-item-name,#new-item-price,#new-item-quantity{
-            width:95%;
-    }    
+            width:100%;
+    }  
+    #createnewinvoicebutton,#add-new-item-btn{
+        width:50%;
+    }
 }
