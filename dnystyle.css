@@ -81,11 +81,13 @@ th,td{
     flex-direction: column;
     align-items: center;
 }
+/* Phần CSS cho trang tạo new invoice */
 .new-invoice-page{
     display : flex;
     flex-direction: column;
     align-items: center;
     width : 100vw;
+    background-color: aquamarine;
     /* border : solid 1px #000e00; */
 }
 .createnewinvoice{
