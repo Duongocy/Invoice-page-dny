@@ -6,8 +6,7 @@ body{
 
 .listofinvoice{
     width:62vw;
-    height : 100vh;
-    border:solid 1px rgba(2, 3, 18, 0.867);
+    /* border:solid 1px rgba(2, 3, 18, 0.867); */
 }
 .detailofinvoice{
     width:38vw;
