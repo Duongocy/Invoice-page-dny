@@ -1,6 +1,4 @@
 /* Phần CSS cho trang tạo new invoice */
-
-
 .new-invoice-page{
     display : flex;
     flex-direction: column;
@@ -8,6 +6,11 @@
     width : 100vw;
     background-color: #0be7a5;
     /* border : solid 1px #000e00; */
+}
+
+.co-title {
+    font-size: 30px;
+    padding: 24px;
 }
 
 .new-invoice-creat{
