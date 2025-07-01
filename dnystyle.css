@@ -82,6 +82,8 @@ th,td{
     align-items: center;
 }
 /* Phần CSS cho trang tạo new invoice */
+
+
 .new-invoice-page{
     display : flex;
     flex-direction: column;
