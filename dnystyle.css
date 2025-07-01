@@ -180,7 +180,7 @@ th,td{
     .product-info{
             width:100%;
     }    
-    .new-item-name,.new-item-price,.new-item-quantity{
-        width:100%;
+    #new-item-name,#new-item-price,#new-item-quantity{
+            width:100%;
     }    
 }
