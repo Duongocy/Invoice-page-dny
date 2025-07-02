@@ -17,6 +17,7 @@ let submit_button = document.getElementById('submit-new-invoice-btn');
 //Hàm cho nút nhấn Create New Invoice
 create_new_invoice_btn.addEventListener('click',function(){
     //điều gì xảy ra khi nhấn nút create new invoice 
+    submit_button.textContent = "Submit Invoice!"
     console.log("Điều gì xảy ra khi nhấn nút create new invoice");
     console.log('Invoice title : ',input_invoice_title.value);
     console.log('Customer  : ',input_invoice_customer.value);
@@ -92,7 +93,7 @@ submit_button.addEventListener('click',function(){
         })
         .then(data => {
             console.log('Lưu invoice thành công :', data);
-            alert('Lưu thành công!');
+            submit_button.textContent = "Save OK!"
             //xóa bảng item 
             while(new_item_table_body.rows.length>0){
                 new_item_table_body.deleteRow(0);
@@ -108,6 +109,7 @@ submit_button.addEventListener('click',function(){
         })
         .catch(error => {
             console.error('Lỗi khi lưu invoice :', error);
+            submit_button.textContent = "Lỗi khi lưu"
         });
     }
 })
