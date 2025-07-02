@@ -220,4 +220,7 @@ td:nth-child(5) {
     .invoivefooter{
         margin-bottom: 20px;
     }
+    .printbutton{
+        display : none;
+    }
 }
