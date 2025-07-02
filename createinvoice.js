@@ -92,6 +92,7 @@ submit_button.addEventListener('click',function(){
         })
         .then(data => {
             console.log('Lưu invoice thành công :', data);
+            alert('Lưu thành công!');
             //xóa bảng item 
             while(new_item_table_body.rows.length>0){
                 new_item_table_body.deleteRow(0);
