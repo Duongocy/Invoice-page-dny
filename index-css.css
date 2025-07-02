@@ -180,9 +180,11 @@ td:nth-child(5) {
         height : 60%;
         width : 100%;
         overflow-y: auto;
+        border: 1.5px solid black;
     }
     #banginvoice {
         width : 100%;
+        
     }
     #banginvoice thead{
         position: sticky;
