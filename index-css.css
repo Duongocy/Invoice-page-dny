@@ -279,9 +279,6 @@ td:nth-child(5) {
     .invoivefooter{
         margin-bottom: 20px;
     }
-    .pressbutton{
-        display : none;
-    }
 
     /* Phần hiển thị vong floading */
 .spiner{
