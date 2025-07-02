@@ -43,6 +43,10 @@ body {
     z-index: 10;
 }
 
+#bangchitietinvoice thead {
+    background-color: rgb(218, 122, 6);
+}
+
 .createnewinvoice {
     display: flex;
     flex-direction: column;
@@ -186,6 +190,7 @@ td:nth-child(5) {
         display: flex;
         flex-direction: column;
         align-items: center;
+        margin-top: 20px;
     }
 
     .khungchuainvoice {
