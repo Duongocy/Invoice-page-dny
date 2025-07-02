@@ -183,6 +183,39 @@ td:nth-child(5) {
     height:35px;
 }
 
+/* Phần hiển thị vong floading */
+.spiner{
+    /* //Phần dành cho spiner */
+    border: 8px solid #f3f3f3;
+        /* Màu nền */
+        border-top: 8px solid #3498db;
+        /* Màu quay */
+        border-radius: 50%;
+        /* Hình tròn */
+        width: 50px;
+        /* Kích thước */
+        height: 50px;
+        /* Kích thước */
+        animation: spin 1s linear infinite;
+        /* Hiệu ứng quay */
+        margin: 100px auto;
+        /* Canh giữa */
+}
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.hidden {
+    display: none;
+    /* Ẩn khi không cần */
+}
+
 /* Phần dành cho màn hình điện thoại */
 @media only screen and (max-width: 768px) {
 /* Phần dành cho trang index  */
@@ -249,4 +282,37 @@ td:nth-child(5) {
     .pressbutton{
         display : none;
     }
+
+    /* Phần hiển thị vong floading */
+.spiner{
+    /* //Phần dành cho spiner */
+    border: 8px solid #f3f3f3;
+        /* Màu nền */
+        border-top: 8px solid #3498db;
+        /* Màu quay */
+        border-radius: 50%;
+        /* Hình tròn */
+        width: 50px;
+        /* Kích thước */
+        height: 50px;
+        /* Kích thước */
+        animation: spin 1s linear infinite;
+        /* Hiệu ứng quay */
+        margin: 100px auto;
+        /* Canh giữa */
+}
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.hidden {
+    display: none;
+    /* Ẩn khi không cần */
+}
 }

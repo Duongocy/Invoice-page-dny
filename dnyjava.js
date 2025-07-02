@@ -6,7 +6,10 @@ const tableitembody = document.getElementById('bangchitietinvoice').getElementsB
 const datecreate = document.getElementById('invoicecreatdateid');
 const titleinvoice = document.getElementById('invoicetitle');
 const invoicecustomer = document.getElementById('customername');
-
+const loadingElement = document.getElementById('loading');
+const loadingElement1=document.getElementById('loading1')
+// Hiện spinner
+loadingElement.classList.remove('hidden');
 
 //Phương thức fetch để gởi yêu cầu đến hàm restful api phía sever
 fetch('https://invoice-sever.onrender.com/Invoice?yeucau=layhoadon')
@@ -16,7 +19,9 @@ fetch('https://invoice-sever.onrender.com/Invoice?yeucau=layhoadon')
         }
         return response.json();
     })
-    .then(function(data) {
+    .then(function (data) {
+        // Ẩn spinner và hiển thị nội dung
+        loadingElement.classList.add('hidden');
         console.log(data); //dữ liệu trả về dưới dạng mảng của đối tượng, mỗi đối tượng là 1 invoice 
         update_invoice_list_to_table(data);//hiển thị thông tin từng đối tượng (invoice lên bảng liệt kê)      
     })
@@ -52,6 +57,11 @@ function update_invoice_list_to_table(invoices) {
 
         //Hàm hiển thị chi tiết hóa đơn cho nút view
         viewbtn.addEventListener("click", function () {
+            while (tableitembody.rows.length > 0) {
+                tableitembody.deleteRow(0);
+            }
+            // Hiện spinner
+            loadingElement1.classList.remove('hidden');  
             //hiển thị các thông tin cơ bản của hóa đơn 
             invoicecustomer.textContent = 'Customer name : '+hoadon.customer;    
             titleinvoice.textContent = 'Invoice title : '+hoadon.invoice_title;
@@ -68,6 +78,8 @@ function update_invoice_list_to_table(invoices) {
                     return response.json();
                 })
                 .then(function (data) {
+                    // Ẩn spinner và hiển thị nội dung
+                    loadingElement1.classList.add('hidden');
                     console.log(data);//đã lấy được bảng chi tiết của từng hóa đơn
                     update_detail_of_invoice(data);//hiển thị chi tiết của từng hóa đơn lên bảng bên phần Detail Of Invoice
                 })
