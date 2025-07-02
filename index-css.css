@@ -31,6 +31,12 @@ body {
     table-layout: fixed;
     /* Sử dụng chế độ cố định cho bảng */
 }
+#banginvoice thead{
+    position: sticky;
+    background-color: rgb(218, 122, 6);
+    top:0;
+    z-index: 10;
+}
 
 .createnewinvoice {
     display: flex;
@@ -162,7 +168,12 @@ td:nth-child(5) {
         height : 40vh;
         overflow-y: auto;
     }
-
+    #banginvoice thead{
+        position: sticky;
+        background-color: rgb(218, 122, 6);
+        top:0;
+        z-index: 10;
+    }
     .detailofinvoice {
         width: 100vw;
         /* border:solid 1px rgba(2, 3, 18, 0.867); */
