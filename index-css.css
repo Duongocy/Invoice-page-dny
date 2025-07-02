@@ -22,6 +22,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    height : 40vh;
+    overflow-y: auto;
 }
 
 #banginvoice {
