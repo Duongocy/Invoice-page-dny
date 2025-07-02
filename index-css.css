@@ -155,6 +155,13 @@ td:nth-child(5) {
         width: 100vw;
         /* height : 50vh; */
     }
+    .invoice-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height : 40vh;
+        overflow-y: auto;
+    }
 
     .detailofinvoice {
         width: 100vw;
