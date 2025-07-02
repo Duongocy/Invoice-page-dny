@@ -4,6 +4,11 @@ body {
     height: 100vh;
 }
 /* Phần liệt kê danh sách các invoice theo user */
+.header-invoice-list{
+    display:flex;
+    flex-direction: column;
+    justify-items: left;
+}
 .listofinvoice {
     width: 62vw;
 }   
@@ -22,7 +27,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height : 40vh;
+    height : 90vh;
     overflow-y: auto;
 }
 
@@ -82,7 +87,7 @@ body {
 
 /* Phần hiển thị chi tiết các món đồ từng invoice */
 .detailofinvoice {
-    width: 38vw;
+    width: 35vw;
     border: solid 1px rgba(2, 3, 18, 0.867);
     display: flex;
     flex-direction: column;
@@ -90,7 +95,7 @@ body {
 }
 
 .khungchuainvoice {
-    width: 90%;
+    width: 100%;
 }
 
 .containerbangchitietinvoice {
@@ -158,14 +163,14 @@ td:nth-child(5) {
     }
 
     .listofinvoice {
-        width: 100vw;
-        /* height : 50vh; */
+        width: 100%;
+        height : 50vh;
     }
     .invoice-list {
         display: flex;
         flex-direction: column;
         align-items: center;
-        height : 40vh;
+        height : 60%;
         overflow-y: auto;
     }
     #banginvoice thead{
@@ -175,7 +180,7 @@ td:nth-child(5) {
         z-index: 10;
     }
     .detailofinvoice {
-        width: 100vw;
+        width: 100%;
         /* border:solid 1px rgba(2, 3, 18, 0.867); */
         /* height:50vh; */
         display: flex;
@@ -186,7 +191,9 @@ td:nth-child(5) {
     .khungchuainvoice {
         width: 95%;
     }
-
+    #bangchitietinvoice{
+        width:100%;
+    }
     #banginvoice th:nth-child(1),
     #banginvoice td:nth-child(1) {
         display: none;
@@ -195,5 +202,8 @@ td:nth-child(5) {
     #banginvoice th:nth-child(5),
     #banginvoice td:nth-child(5) {
         display: none;
+    }
+    .invoivefooter{
+        margin-bottom: 20px;
     }
 }
