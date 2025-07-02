@@ -2,8 +2,23 @@ body {
     display: flex;
     flex-direction: row;
     height: 100vh;
+    background-color: #0be7a5;
 }
 /* Phần liệt kê danh sách các invoice theo user */
+.khungchuainvoice{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.invoiceheader{
+    width:95%;
+}
+.containerbangchitietinvoice{
+    width:95%;
+}
+#bangchitietinvoice{
+    width:100%;
+}
 .header-invoice-list{
     display:flex;
     flex-direction: column;
@@ -155,6 +170,12 @@ td:nth-child(5) {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.printbutton{
+    margin-top: 20px;
+    width:50%;
+    height:5%;
 }
 
 /* Phần dành cho màn hình điện thoại */
