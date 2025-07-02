@@ -42,7 +42,6 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height : 90vh;
     overflow-y: auto;
 }
 
@@ -64,9 +63,15 @@ body {
 
 .createnewinvoice {
     display: flex;
+    width:100%;
     flex-direction: column;
     align-items: center;
-    margin: 24px;
+}
+.createnewinvoice a{
+    display : flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
 }
 
 /* độ rộng các cột  */
@@ -172,10 +177,10 @@ td:nth-child(5) {
     align-items: center;
 }
 
-.printbutton{
+.pressbutton{
     margin-top: 20px;
     width:50%;
-    height:5%;
+    height:35px;
 }
 
 /* Phần dành cho màn hình điện thoại */
@@ -241,7 +246,7 @@ td:nth-child(5) {
     .invoivefooter{
         margin-bottom: 20px;
     }
-    .printbutton{
+    .pressbutton{
         display : none;
     }
 }
