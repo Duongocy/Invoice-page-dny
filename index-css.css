@@ -297,6 +297,7 @@ td:nth-child(5) {
         /* Hiệu ứng quay */
         margin: 100px auto;
         /* Canh giữa */
+        position:relative;
         display : flex;
         z-index: 10;
 }
