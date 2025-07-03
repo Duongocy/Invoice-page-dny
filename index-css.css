@@ -297,8 +297,9 @@ td:nth-child(5) {
         /* Hiệu ứng quay */
         margin: 100px auto;
         /* Canh giữa */
-        position:relative;
-        display : flex;
+        position:absolute;
+        top:0;left:0;
+        display : block;
         z-index: 10;
 }
 @keyframes spin {
