@@ -131,17 +131,17 @@ body {
     align-items: center;
 }
 
-table { 
+/* table { 
     width: 95%;
     border: solid 1px rgba(2, 3, 18, 0.867);
-}
+} */
 /* cân nhắc thay table bằng id bangchitietinvoice */
 
-th,
+/* th,
 td {
     border: solid 1px rgba(2, 3, 18, 0.867);
     height: 30px;
-}
+} */
 
 /* độ rộng các cột cho bảng chi tiết invoice  */
 #bangchitietinvoice th:nth-child(1),
