@@ -39,6 +39,7 @@ body {
 }
 
 .invoice-list {
+    position : relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -123,6 +124,7 @@ body {
 }
 
 .containerbangchitietinvoice {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -186,7 +188,9 @@ td:nth-child(5) {
 /* Phần hiển thị vong floading */
 .spiner{
     /* //Phần dành cho spiner */
-    border: 8px solid #f3f3f3;
+        position:absolute;
+        top:0;
+        border: 8px solid #f3f3f3;
         /* Màu nền */
         border-top: 8px solid #3498db;
         /* Màu quay */
@@ -283,7 +287,7 @@ td:nth-child(5) {
     /* Phần hiển thị vong floading */
 .spiner{
     /* //Phần dành cho spiner */
-    border: 8px solid #f3f3f3;
+        border: 8px solid #f3f3f3;
         /* Màu nền */
         border-top: 8px solid #3498db;
         /* Màu quay */
@@ -297,10 +301,6 @@ td:nth-child(5) {
         /* Hiệu ứng quay */
         margin: 100px auto;
         /* Canh giữa */
-        position:absolute;
-        top:0;left:0;
-        display : block;
-        z-index: 10;
 }
 @keyframes spin {
     0% {
