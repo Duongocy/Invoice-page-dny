@@ -67,7 +67,7 @@ function update_invoice_list_to_table(invoices) {
             bang_chi_tiet_invoice.style.display = 'none';
             //hiển thị các thông tin cơ bản của hóa đơn 
             invoicecustomer.textContent = 'Customer name : '+hoadon.customer;    
-            titleinvoice.textContent = 'Invoice title : '+hoadon.invoice_title;
+            titleinvoice.textContent = 'Invoice Title : '+hoadon.invoice_title;
             datecreate.textContent = 'Invoice Creating Date : ' + hoadon.invoice_date;    
 
         //Lại dùng phương thức fetch để Lấy bảng chi tiết hóa đơn theo ID của hóa đơn
