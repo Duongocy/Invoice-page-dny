@@ -1,8 +1,9 @@
 //kết nối với restful api để gởi lệnh GET và lấy danh sách các hóa đơn và hiển thị lên phần List Of Invoice
 //Khai báo các đối tượng trên UI
 const tablebody = document.getElementById('banginvoice').getElementsByTagName('tbody')[0];
-
+const bang_invoice = document.getElementById('banginvoice');
 const tableitembody = document.getElementById('bangchitietinvoice').getElementsByTagName('tbody')[0];
+const bang_chi_tiet_invoice = document.getElementById('bangchitietinvoice');
 const datecreate = document.getElementById('invoicecreatdateid');
 const titleinvoice = document.getElementById('invoicetitle');
 const invoicecustomer = document.getElementById('customername');
@@ -10,7 +11,7 @@ const loadingElement = document.getElementById('loading');
 const loadingElement1=document.getElementById('loading1')
 // Hiện spinner
 loadingElement.style.display = 'block';
-
+bang_invoice.style.display = 'none';
 //Phương thức fetch để gởi yêu cầu đến hàm restful api phía sever
 fetch('https://invoice-sever.onrender.com/Invoice?yeucau=layhoadon')
     .then(function(response) {
@@ -22,6 +23,7 @@ fetch('https://invoice-sever.onrender.com/Invoice?yeucau=layhoadon')
     .then(function (data) {
         // Ẩn spinner và hiển thị nội dung
         loadingElement.style.display = 'none';
+        bang_invoice.style.display = 'table';
         console.log(data); //dữ liệu trả về dưới dạng mảng của đối tượng, mỗi đối tượng là 1 invoice 
         update_invoice_list_to_table(data);//hiển thị thông tin từng đối tượng (invoice lên bảng liệt kê)      
     })
@@ -62,6 +64,7 @@ function update_invoice_list_to_table(invoices) {
             }
             // Hiện spinner
             loadingElement1.style.display = 'block';
+            bang_chi_tiet_invoice.style.display = 'none';
             //hiển thị các thông tin cơ bản của hóa đơn 
             invoicecustomer.textContent = 'Customer name : '+hoadon.customer;    
             titleinvoice.textContent = 'Invoice title : '+hoadon.invoice_title;
@@ -80,6 +83,7 @@ function update_invoice_list_to_table(invoices) {
                 .then(function (data) {
                     // Ẩn spinner và hiển thị nội dung
                     loadingElement1.style.display = 'none';
+                    bang_chi_tiet_invoice.style.display = 'table';
                     console.log(data);//đã lấy được bảng chi tiết của từng hóa đơn
                     update_detail_of_invoice(data);//hiển thị chi tiết của từng hóa đơn lên bảng bên phần Detail Of Invoice
                 })
