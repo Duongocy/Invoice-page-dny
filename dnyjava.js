@@ -13,7 +13,7 @@ const loadingElement1=document.getElementById('loading1')
 loadingElement.style.display = 'block';
 bang_invoice.style.display = 'none';
 //Phương thức fetch để gởi yêu cầu đến hàm restful api phía sever
-fetch('https://invoice-sever.onrender.com/Invoice?yeucau=layhoadon')
+fetch('https://invoice-sever-order.onrender.com/Invoice?yeucau=layhoadon')
     .then(function(response) {
         if (!response.ok) {
             throw new Error('Network response was not ok');
@@ -72,7 +72,7 @@ function update_invoice_list_to_table(invoices) {
 
         //Lại dùng phương thức fetch để Lấy bảng chi tiết hóa đơn theo ID của hóa đơn
         const invoiceid = hoadon.invoice_id;
-        let request_string = 'https://invoice-sever.onrender.com/Invoice?yeucau=chitiethoadon&invid=' + String(invoiceid);
+        let request_string = 'https://invoice-sever-order.onrender.com/Invoice?yeucau=chitiethoadon&invid=' + String(invoiceid);
             fetch(request_string)
                 .then(function (response) {
                     if (!response.ok) {
