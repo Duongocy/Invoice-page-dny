@@ -17,6 +17,7 @@ body {
     width:95%;
 }
 #bangchitietinvoice{
+    display:none;
     width:100%;
 }
 .header-invoice-list{
@@ -57,9 +58,7 @@ body {
     top:0;
     z-index: 10;
 }
-#bangchitietinvoice {
-    display : none;
-}
+
 #bangchitietinvoice thead {
     background-color: rgb(218, 122, 6);
 }
@@ -246,6 +245,7 @@ td:nth-child(5) {
         border: 1.5px solid black;
     }
     #banginvoice {
+        display:none;
         width : 100%;
         
     }
@@ -269,6 +269,7 @@ td:nth-child(5) {
         width: 95%;
     }
     #bangchitietinvoice{
+        display: none;
         width:100%;
     }
     #banginvoice th:nth-child(1),
