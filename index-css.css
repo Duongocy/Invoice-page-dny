@@ -187,7 +187,6 @@ td:nth-child(5) {
 
 /* Phần hiển thị vong floading */
 .spiner{
-        position : relative;
     /* //Phần dành cho spiner */
         border: 8px solid #f3f3f3;
         /* Màu nền */

@@ -9,7 +9,7 @@ const invoicecustomer = document.getElementById('customername');
 const loadingElement = document.getElementById('loading');
 const loadingElement1=document.getElementById('loading1')
 // Hiện spinner
-loadingElement.classList.remove('hidden');
+loadingElement.style.display = 'block';
 
 //Phương thức fetch để gởi yêu cầu đến hàm restful api phía sever
 fetch('https://invoice-sever.onrender.com/Invoice?yeucau=layhoadon')
@@ -21,7 +21,7 @@ fetch('https://invoice-sever.onrender.com/Invoice?yeucau=layhoadon')
     })
     .then(function (data) {
         // Ẩn spinner và hiển thị nội dung
-        loadingElement.classList.add('hidden');
+        loadingElement.style.display = 'none';
         console.log(data); //dữ liệu trả về dưới dạng mảng của đối tượng, mỗi đối tượng là 1 invoice 
         update_invoice_list_to_table(data);//hiển thị thông tin từng đối tượng (invoice lên bảng liệt kê)      
     })
