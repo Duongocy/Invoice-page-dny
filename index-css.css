@@ -187,9 +187,8 @@ td:nth-child(5) {
 
 /* Phần hiển thị vong floading */
 .spiner{
+        position : relative;
     /* //Phần dành cho spiner */
-        position:absolute;
-        top:0;
         border: 8px solid #f3f3f3;
         /* Màu nền */
         border-top: 8px solid #3498db;
@@ -286,21 +285,20 @@ td:nth-child(5) {
 
     /* Phần hiển thị vong floading */
 .spiner{
-    /* //Phần dành cho spiner */
-        border: 8px solid #f3f3f3;
-        /* Màu nền */
-        border-top: 8px solid #3498db;
-        /* Màu quay */
-        border-radius: 50%;
-        /* Hình tròn */
-        width: 50px;
-        /* Kích thước */
-        height: 50px;
-        /* Kích thước */
-        animation: spin 1s linear infinite;
-        /* Hiệu ứng quay */
-        margin: 100px auto;
-        /* Canh giữa */
+    border: 8px solid #f3f3f3;
+    /* Màu nền */
+    border-top: 8px solid #3498db;
+    /* Màu quay */
+    border-radius: 50%;
+    /* Hình tròn */
+    width: 50px;
+    /* Kích thước */
+    height: 50px;
+    /* Kích thước */
+    animation: spin 1s linear infinite;
+    /* Hiệu ứng quay */
+    margin: 100px auto;
+    /* Canh giữa */
 }
 @keyframes spin {
     0% {
@@ -312,8 +310,4 @@ td:nth-child(5) {
     }
 }
 
-.hidden {
-    display: none;
-    /* Ẩn khi không cần */
-}
 }
