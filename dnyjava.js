@@ -23,7 +23,7 @@ fetch('https://invoice-sever.onrender.com/Invoice?yeucau=layhoadon')
     .then(function (data) {
         // Ẩn spinner và hiển thị nội dung
         loadingElement.style.display = 'none';
-        bang_invoice.style.display = 'table';
+        // bang_invoice.style.display = 'table';
         console.log(data); //dữ liệu trả về dưới dạng mảng của đối tượng, mỗi đối tượng là 1 invoice 
         update_invoice_list_to_table(data);//hiển thị thông tin từng đối tượng (invoice lên bảng liệt kê)      
     })
@@ -83,7 +83,7 @@ function update_invoice_list_to_table(invoices) {
                 .then(function (data) {
                     // Ẩn spinner và hiển thị nội dung
                     loadingElement1.style.display = 'none';
-                    bang_chi_tiet_invoice.style.display = 'table';
+                    // bang_chi_tiet_invoice.style.display = 'table';
                     console.log(data);//đã lấy được bảng chi tiết của từng hóa đơn
                     update_detail_of_invoice(data);//hiển thị chi tiết của từng hóa đơn lên bảng bên phần Detail Of Invoice
                 })
