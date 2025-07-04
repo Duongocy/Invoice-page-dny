@@ -46,6 +46,7 @@ body {
 }
 
 #banginvoice {
+    display:none;
     width: 95%;
     table-layout: fixed;
     /* Sử dụng chế độ cố định cho bảng */
@@ -56,7 +57,9 @@ body {
     top:0;
     z-index: 10;
 }
-
+#bangchitietinvoice {
+    display : none;
+}
 #bangchitietinvoice thead {
     background-color: rgb(218, 122, 6);
 }
