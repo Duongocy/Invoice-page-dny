@@ -61,7 +61,7 @@ function update_invoice_list_to_table(invoices) {
                 tableitembody.deleteRow(0);
             }
             // Hiện spinner
-            loadingElement1.classList.remove('hidden');  
+            loadingElement1.style.display = 'block';
             //hiển thị các thông tin cơ bản của hóa đơn 
             invoicecustomer.textContent = 'Customer name : '+hoadon.customer;    
             titleinvoice.textContent = 'Invoice title : '+hoadon.invoice_title;
@@ -79,7 +79,7 @@ function update_invoice_list_to_table(invoices) {
                 })
                 .then(function (data) {
                     // Ẩn spinner và hiển thị nội dung
-                    loadingElement1.classList.add('hidden');
+                    loadingElement1.style.display = 'none';
                     console.log(data);//đã lấy được bảng chi tiết của từng hóa đơn
                     update_detail_of_invoice(data);//hiển thị chi tiết của từng hóa đơn lên bảng bên phần Detail Of Invoice
                 })
