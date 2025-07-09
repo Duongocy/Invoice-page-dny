@@ -66,7 +66,7 @@ body{
 /* Phần dành cho màn hình điện thoại */
 @media only screen and (max-width: 768px) {
     body {
-            width: 100vw;
+            width: 95vw;
             height: 90vh;
             display: flex;
             flex-direction: column;
