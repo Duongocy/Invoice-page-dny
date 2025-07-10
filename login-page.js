@@ -73,13 +73,13 @@ login_button.addEventListener('click', async function () {
             body: JSON.stringify(user_object) // Chuyển đổi mảng thành chuỗi JSON
         })   
             .then(response => {
-                if (response.ok = false) {
+                if (!response.ok) {
                     throw new error("Api không phản hồi");                
                 }
                 return response.json();
             })
             .then(data => {
-                console.log(data);
+                console.log("Nhận lại từ api nè :",data);
             })
             .catch(error => {
             console.log("Lỗi khi gởi requesr");   
