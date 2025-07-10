@@ -126,5 +126,4 @@ function update_detail_of_invoice(products) {
         lastrow.insertCell(3);
         let totalamount = lastrow.insertCell(4);
         totalamount.textContent = tongtien;
-    
 } 

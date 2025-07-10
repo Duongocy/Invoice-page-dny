@@ -46,9 +46,12 @@ input_name.addEventListener('input', async () => {
 })
 
 //Tạo user mới 
-login_button.addEventListener('click', function () {
-    if (input_name.value.length > 0 & input_email.checkValidity() & input_pass.value.length>0 & confirm_input_pass.value.length>0 & input_pass.value === confirm_input_pass.value) {
+login_button.addEventListener('click', async function () {
+    if (input_name.value.length > 0 && input_email.checkValidity() && input_pass.value.length>0 && confirm_input_pass.value.length>0 && input_pass.value === confirm_input_pass.value) {
         console.log("Giá trị hợp lệ");
+        // login_button.style.backgroundColor = "yellow";
+        // login_button.textContent = "Creating user..";
+        // login_button.disabled = "true";
         //gởi thông tin đến 
         let name = input_name.value;
         let email = input_email.value;
@@ -65,22 +68,22 @@ login_button.addEventListener('click', function () {
         fetch('https://api-create-new-user.onrender.com/Invoice', {
             method: 'POST',
             headers: {
-            'Content-Type': 'application/json'
+                'Content-Type': 'application/json'
             },
             body: JSON.stringify(user_object) // Chuyển đổi mảng thành chuỗi JSON
+        })   
+            .then(response => {
+                if (response.ok = false) {
+                    throw new error("Api không phản hồi");                
+                }
+                return response.json();
             })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.json();
-        })
-        .then(data => {
-            console.log('Tạo user thành công :', data);
-        })
-        .catch(error => {
-            console.error('Lỗi khi tạo user :', error);
-        });
+            .then(data => {
+                console.log(data);
+            })
+            .catch(error => {
+            console.log("Lỗi khi gởi requesr");   
+            });
     }
     else {
         console.log("Giá trị không hợp lệ");
