@@ -26,6 +26,25 @@ login_question.addEventListener('click', function () {
     }
 })
 
+//check ngay lúc đang nhập tên user
+let thoi_gian_cho;
+input_name.addEventListener('input', async () => {
+    clearTimeout(thoi_gian_cho);//xóa bộ đếm thời gian
+    thoi_gian_cho = setTimeout(async function() {
+        const name_inputting = input_name.value.trim(); //lây tên đang được nhập vào 
+        console.log(`https://api-create-new-user.onrender.com/Invoice?username=${name_inputting}`);
+        const res = await fetch(`https://api-create-new-user.onrender.com/Invoice?username=${name_inputting}`); //gởi tên đó đến API   
+        const data = await res.json(); //nhận lại phản hồi từ api
+        console.log("Data nhận về là : ", data);   
+        if (data.exists) {
+            input_name.style.color = "red";
+        }
+        else {
+            input_name.style.color = "white";
+        }
+    },1000)
+})
+
 //Tạo user mới 
 login_button.addEventListener('click', function () {
     if (input_name.value.length > 0 & input_email.checkValidity() & input_pass.value.length>0 & confirm_input_pass.value.length>0 & input_pass.value === confirm_input_pass.value) {
