@@ -89,5 +89,6 @@ login_button.addEventListener('click', async function () {
     }
     else {
         console.log("Giá trị không hợp lệ");
+        alert("Kiểm tra lại các thông tin.");
     }
 })
