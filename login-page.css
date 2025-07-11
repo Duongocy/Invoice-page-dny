@@ -49,6 +49,12 @@ body{
     border-radius: 20px;
     background-color:aqua; 
 }
+.creating-user-button{
+    width: 50%;
+    height: 40px;
+    border-radius: 20px;
+    background-color: rgb(200, 243, 9);
+}
 #input-name,
 #input-email,
 #input-pass,#confirm-input-pass{

@@ -49,9 +49,8 @@ input_name.addEventListener('input', async () => {
 login_button.addEventListener('click', async function () {
     if (input_name.value.length > 0 && input_email.checkValidity() && input_pass.value.length>0 && confirm_input_pass.value.length>0 && input_pass.value === confirm_input_pass.value) {
         console.log("Giá trị hợp lệ");
-        // login_button.style.backgroundColor = "yellow";
-        // login_button.textContent = "Creating user..";
-        // login_button.disabled = "true";
+        login_button.style.backgroundColor = "yellow";
+        login_button.textContent = "Creating new user..";
         //gởi thông tin đến 
         let name = input_name.value;
         let email = input_email.value;
@@ -74,15 +73,18 @@ login_button.addEventListener('click', async function () {
         })   
             .then(response => {
                 if (!response.ok) {
-                    throw new error("Api không phản hồi");                
+                    throw new Error("Api không phản hồi");                
                 }
                 return response.json();
             })
             .then(data => {
-                console.log("Nhận lại từ api nè :",data);
+                console.log("Nhận lại từ api nè :", data);                
+                login_button.style.backgroundColor = "aqua";
+                login_button.textContent = "Create Account";
+                alert("Đã tạo User thành công");
             })
             .catch(error => {
-            console.log("Lỗi khi gởi requesr");   
+            console.log("Lỗi khi gởi requesr : ",error.message);   
             });
     }
     else {
