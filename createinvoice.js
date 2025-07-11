@@ -1,3 +1,8 @@
+//lấy giá trị biến user_id được truyền từ trang login đến 
+const user_id = sessionStorage.getItem('user_id');
+const user_name = sessionStorage.getItem('user_name');
+console.log('User ID:', user_id); // Có thể truy cập user_id ở đây
+console.log('User name:', user_name); // Có thể truy cập user_id ở đây
 let create_new_invoice_btn = document.getElementById('createnewinvoicebutton');
 let invoice_title = document.getElementById('newinvoice-title');
 let invoice_customer = document.getElementById('customer-name');

@@ -88,6 +88,7 @@ login_button.addEventListener('click', async function (event) {
                 //chuyển hướng đến trang listofinvoice
                 // Sau khi login thành công
                 sessionStorage.setItem('user_id', id);//gand giá trị id cho biến user_id và truyền đến phiên làm việc để trang được điều hướng tiếp theo có thể truy cập
+                sessionStorage.setItem('user_name', name);
                 window.location.href = 'listofinvoice.html'; // Chuyển hướng đến trang hóa đơn
             })
             .catch(error => {

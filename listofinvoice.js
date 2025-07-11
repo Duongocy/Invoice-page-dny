@@ -1,7 +1,9 @@
 
 //lấy giá trị biến user_id được truyền từ trang login đến 
 const user_id = sessionStorage.getItem('user_id');
+const user_name = sessionStorage.getItem('user_name');
 console.log('User ID:', user_id); // Có thể truy cập user_id ở đây
+console.log('User name:', user_name); // Có thể truy cập user_id ở đây
 //kết nối với restful api để gởi lệnh GET và lấy danh sách các hóa đơn và hiển thị lên phần List Of Invoice
 //Khai báo các đối tượng trên UI
 const tablebody = document.getElementById('banginvoice').getElementsByTagName('tbody')[0];
