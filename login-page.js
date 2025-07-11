@@ -51,6 +51,7 @@ login_button.addEventListener('click', async function (event) {
     if (input_name.value.length > 0 && input_email.checkValidity() && input_pass.value.length>0 && confirm_input_pass.value.length>0 && input_pass.value === confirm_input_pass.value) {
         console.log("Giá trị hợp lệ");
         login_button.style.backgroundColor = "yellow";
+        login_button.style.color = "blue";
         login_button.textContent = "Creating new user..";
         //gởi thông tin đến 
         let name = input_name.value;
@@ -81,6 +82,7 @@ login_button.addEventListener('click', async function (event) {
             .then(data => {
                 console.log("Nhận lại từ api nè :", data);                
                 login_button.style.backgroundColor = "aqua";
+                login_button.style.color = "white";
                 login_button.textContent = "Create Account";
                 alert("Đã tạo User thành công");
             })
