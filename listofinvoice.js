@@ -6,6 +6,7 @@ console.log('User ID:', user_id); // Có thể truy cập user_id ở đây
 console.log('User name:', user_name); // Có thể truy cập user_id ở đây
 //kết nối với restful api để gởi lệnh GET và lấy danh sách các hóa đơn và hiển thị lên phần List Of Invoice
 //Khai báo các đối tượng trên UI
+const user_name_element = document.getElementById('user_name');
 const tablebody = document.getElementById('banginvoice').getElementsByTagName('tbody')[0];
 const bang_invoice = document.getElementById('banginvoice');
 const tableitembody = document.getElementById('bangchitietinvoice').getElementsByTagName('tbody')[0];
@@ -18,6 +19,8 @@ const loadingElement1=document.getElementById('loading1')
 // Hiện spinner
 loadingElement.style.display = 'block';
 bang_invoice.style.display = 'none';
+//hiển thị user name
+user_name_element.textContent = user_name +" (ID : "+user_id+")";
 //Phương thức fetch để gởi yêu cầu đến hàm restful api phía sever
 fetch('https://invoice-sever.onrender.com/Invoice?yeucau=layhoadon')
     .then(function(response) {
