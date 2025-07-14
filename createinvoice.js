@@ -85,7 +85,7 @@ add_new_item_btn.addEventListener('click',function(){
 submit_button.addEventListener('click',function(){
     // Gửi mảng đối tượng đến RESTful API
     if (product_aray.length>0){
-        fetch('https://invoice-sever-order.onrender.com/Invoice', {
+        fetch('https://invoice-sever.onrender.com/Invoice', {
             method: 'POST',
             headers: {
             'Content-Type': 'application/json'
