@@ -95,8 +95,15 @@ login_button.addEventListener('click', async function (event) {
             console.log("Lỗi khi gởi requesr : ",error.message);   
             });
     }
+    else if (input_email.checkValidity() && input_pass.value.length>0 && login_status){
+        console.log("Đăng nhập..");
+        const email_dang_nhap = input_email.value;
+        const pass_dang_nhap = input_pass.value;
+        const res = await fetch(`https://api-create-new-user.onrender.com/Invoice?email=${email_dang_nhap}&pass=${pass_dang_nhap}`); //gởi tên đó đến API   
+        const data = await res.json(); //nhận lại phản hồi từ api
+        console.log("Data nhận về là : ", data);
+    }
     else {
-        console.log("Giá trị không hợp lệ");
         alert("Kiểm tra lại các thông tin.");
     }
 })
