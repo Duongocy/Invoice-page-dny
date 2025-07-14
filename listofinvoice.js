@@ -22,7 +22,8 @@ bang_invoice.style.display = 'none';
 //hiển thị user name
 user_name_element.textContent = user_name +" (ID : "+user_id+")";
 //Phương thức fetch để gởi yêu cầu đến hàm restful api phía sever
-fetch('https://invoice-sever.onrender.com/Invoice?yeucau=layhoadon')
+let request_string = 'https://invoice-sever.onrender.com/Invoice?yeucau=layhoadon&userid=' + String(user_id);
+fetch(request_string)
     .then(function(response) {
         if (!response.ok) {
             throw new Error('Network response was not ok');
