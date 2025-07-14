@@ -48,7 +48,7 @@ input_name.addEventListener('input', async () => {
 //Tạo user mới 
 login_button.addEventListener('click', async function (event) {
     event.preventDefault(); //ngăn chặn việc trình duyệt của iphone đòi lưu mật khẩu
-    if (input_name.value.length > 0 && input_email.checkValidity() && input_pass.value.length>0 && confirm_input_pass.value.length>0 && input_pass.value === confirm_input_pass.value) {
+    if (input_name.value.length > 0 && input_email.checkValidity() && input_pass.value.length>0 && confirm_input_pass.value.length>0 && input_pass.value === confirm_input_pass.value && !login_status) {
         console.log("Giá trị hợp lệ");
         login_button.style.backgroundColor = "yellow";
         login_button.style.color = "blue";
