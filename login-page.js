@@ -40,7 +40,7 @@ input_name.addEventListener('input', async () => {
             input_name.style.color = "red";
         }
         else {
-            input_name.style.color = "white";
+            input_name.style.color = "green";
         }
     },1000)
 })
