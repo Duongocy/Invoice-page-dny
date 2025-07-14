@@ -60,6 +60,8 @@ add_new_item_btn.addEventListener('click',function(){
         product_price_cell.textContent = product_price.value;
         product_quantity_cell.textContent = product_quantity.value;
         //nhập các giá trị vừa điền vào biến đối tượng (để lưu vào cơ sở dữ liệu)
+        product_object["user_id"] = user_id;
+        product_object["user_name"] = user_name;
         product_object["invoice_id"]=invoice_id;
         product_object["invoice_title"] = input_invoice_title.value;
         product_object["invoice_date"] = invoice_date;
