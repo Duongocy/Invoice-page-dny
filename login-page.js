@@ -100,8 +100,11 @@ login_button.addEventListener('click', async function (event) {
         const email_dang_nhap = input_email.value;
         const pass_dang_nhap = input_pass.value;
         const res = await fetch(`https://api-create-new-user.onrender.com/Invoice?email=${email_dang_nhap}&pass=${pass_dang_nhap}&kieuyeucau=dangnhap`); //gởi tên đó đến API   
+        
+        //viết cho vui rồi mai viết lại nè (nhớ sử dụng try ... catch)
         const data = await res.json(); //nhận lại phản hồi từ api
-        console.log("Data nhận về là : ", data);
+        console.log("User name : ", data.data.user_name);
+        console.log("ID : ", data.data.user_id);
     }
     else {
         alert("Kiểm tra lại các thông tin.");
