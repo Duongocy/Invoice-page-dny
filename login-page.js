@@ -80,16 +80,21 @@ login_button.addEventListener('click', async function (event) {
                 return response.json();
             })
             .then(data => {//khi đã xác nhận tạo được user thành công thì chạy đoạn này
-                console.log("Nhận lại từ api nè :", data);                
-                login_button.style.backgroundColor = "aqua";
-                login_button.style.color = "white";
-                login_button.textContent = "Create Account";
-                alert("Đã tạo User thành công");//hiển thị thông báo lên màn hình
-                //chuyển hướng đến trang listofinvoice
-                // Sau khi login thành công
-                sessionStorage.setItem('user_id', id);//gand giá trị id cho biến user_id và truyền đến phiên làm việc để trang được điều hướng tiếp theo có thể truy cập
-                sessionStorage.setItem('user_name', name);
-                window.location.href = 'listofinvoice.html'; // Chuyển hướng đến trang hóa đơn
+                if (!data.exists) {
+                    console.log("Nhận lại từ api nè :", data);
+                    login_button.style.backgroundColor = "aqua";
+                    login_button.style.color = "white";
+                    login_button.textContent = "Create Account";
+                    alert("Đã tạo User thành công");//hiển thị thông báo lên màn hình
+                    //chuyển hướng đến trang listofinvoice
+                    // Sau khi login thành công
+                    sessionStorage.setItem('user_id', id);//gand giá trị id cho biến user_id và truyền đến phiên làm việc để trang được điều hướng tiếp theo có thể truy cập
+                    sessionStorage.setItem('user_name', name);
+                    window.location.href = 'listofinvoice.html'; // Chuyển hướng đến trang hóa đơn
+                }
+                else {
+                    alert("Email đã đăng ký trước đây.");
+                }
             })
             .catch(error => {
             console.log("Lỗi khi gởi requesr : ",error.message);   
@@ -99,12 +104,26 @@ login_button.addEventListener('click', async function (event) {
         console.log("Đăng nhập..");
         const email_dang_nhap = input_email.value;
         const pass_dang_nhap = input_pass.value;
-        const res = await fetch(`https://api-create-new-user.onrender.com/Invoice?email=${email_dang_nhap}&pass=${pass_dang_nhap}&kieuyeucau=dangnhap`); //gởi tên đó đến API   
+        try { 
+            const phan_hoi_tu_api = await fetch(`https://api-create-new-user.onrender.com/Invoice?email=${email_dang_nhap}&pass=${pass_dang_nhap}&kieuyeucau=dangnhap`); //gởi tên đó đến API   
+            if (!phan_hoi_tu_api.ok) {
+                throw new error(`lỗi HTTP : ${phan_hoi_tu_api.status}`);
+            }
+            const data = await phan_hoi_tu_api.json(); //nhận lại phản hồi từ api    
+            console.log("User name : ", data.data.user_name);
+            console.log("ID : ", data.data.user_id);
+            sessionStorage.setItem('user_id', data.data.user_id);//gand giá trị id cho biến user_id và truyền đến phiên làm việc để trang được điều hướng tiếp theo có thể truy cập
+            sessionStorage.setItem('user_name', data.data.user_name);
+            window.location.href = 'listofinvoice.html'; // Chuyển hướng đến trang hóa đơn
+        }
+        catch (loine) {
+            console.error('Error fetching data:', loine);
+        }
+        
         
         //viết cho vui rồi mai viết lại nè (nhớ sử dụng try ... catch)
-        const data = await res.json(); //nhận lại phản hồi từ api
-        console.log("User name : ", data.data.user_name);
-        console.log("ID : ", data.data.user_id);
+        
+        
     }
     else {
         alert("Kiểm tra lại các thông tin.");
