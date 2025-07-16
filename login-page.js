@@ -102,6 +102,9 @@ login_button.addEventListener('click', async function (event) {
     }
     else if (input_email.checkValidity() && input_pass.value.length>0 && login_status){
         console.log("Đăng nhập..");
+        login_button.style.backgroundColor = "yellow";
+        login_button.style.color = "blue";
+        login_button.textContent = "Signin..";
         const email_dang_nhap = input_email.value;
         const pass_dang_nhap = input_pass.value;
         try { 
@@ -112,12 +115,19 @@ login_button.addEventListener('click', async function (event) {
             const data = await phan_hoi_tu_api.json(); //nhận lại phản hồi từ api    
             console.log("User name : ", data.data.user_name);
             console.log("ID : ", data.data.user_id);
+            login_button.style.backgroundColor = "aqua";
+            login_button.style.color = "white";
+            login_button.textContent = "Sign In";
             sessionStorage.setItem('user_id', data.data.user_id);//gand giá trị id cho biến user_id và truyền đến phiên làm việc để trang được điều hướng tiếp theo có thể truy cập
             sessionStorage.setItem('user_name', data.data.user_name);
             window.location.href = 'listofinvoice.html'; // Chuyển hướng đến trang hóa đơn
         }
         catch (loine) {
             console.error('Error fetching data:', loine);
+            alert("Thông tin đăng nhập không đúng");
+            login_button.style.backgroundColor = "aqua";
+            login_button.style.color = "white";
+            login_button.textContent = "Sign In";
         }
         
         
