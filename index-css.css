@@ -242,7 +242,7 @@ td:nth-child(5) {
         height : 60%;
         width : 100%;
         overflow-y: auto;
-        border: 1.5px solid black;
+        /* border: 1.5px solid black; */
     }
     #banginvoice {
         display:none;

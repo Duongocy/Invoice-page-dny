@@ -94,6 +94,9 @@ login_button.addEventListener('click', async function (event) {
                 }
                 else {
                     alert("Email đã đăng ký trước đây.");
+                    login_button.style.backgroundColor = "aqua";
+                    login_button.style.color = "white";
+                    login_button.textContent = "Create Account";
                 }
             })
             .catch(error => {
