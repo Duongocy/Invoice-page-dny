@@ -116,10 +116,10 @@ login_button.addEventListener('click', async function (event) {
                 headers: {
                             'Content-Type': 'application/json'
                         },
-                body: JSON.stringify(email_dang_nhap,pass_dang_nhap) // Chuyển đổi mảng thành chuỗi JSON
+                body: JSON.stringify({ ten_email: email_dang_nhap, password: pass_dang_nhap }) // Chuyển đổi mảng thành chuỗi JSON
             }); //gởi tên đó đến API   
             if (!phan_hoi_tu_api.ok) {
-                throw new error(`lỗi HTTP : ${phan_hoi_tu_api.status}`);
+                throw new Error(`lỗi HTTP : ${phan_hoi_tu_api.status}`);
             }
             else {
                 const data = await phan_hoi_tu_api.json(); //nhận lại phản hồi từ api    
@@ -140,11 +140,6 @@ login_button.addEventListener('click', async function (event) {
             login_button.style.color = "white";
             login_button.textContent = "Sign In";
         }
-        
-        
-        //viết cho vui rồi mai viết lại nè (nhớ sử dụng try ... catch)
-        
-        
     }
     else {
         alert("Kiểm tra lại các thông tin.");

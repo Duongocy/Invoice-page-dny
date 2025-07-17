@@ -24,7 +24,12 @@ bang_invoice.style.display = 'none';
 user_name_element.textContent = user_name +" (ID : "+user_id+")";
 //Phương thức fetch để gởi yêu cầu đến hàm restful api phía sever
 let request_string = 'https://invoice-sever.onrender.com/Invoice?yeucau=layhoadon&userid=' + String(user_id);
-fetch(request_string)
+fetch(request_string, {
+    method: GET,
+    headers: {
+            'Authorization': `Bearer ${token}`
+        }
+})
     .then(function(response) {
         if (!response.ok) {
             throw new Error('Network response was not ok');
@@ -84,7 +89,12 @@ function update_invoice_list_to_table(invoices) {
         //Lại dùng phương thức fetch để Lấy bảng chi tiết hóa đơn theo ID của hóa đơn
         const invoiceid = hoadon.invoice_id;
         let request_string = 'https://invoice-sever.onrender.com/Invoice?yeucau=chitiethoadon&invid=' + String(invoiceid);
-            fetch(request_string)
+            fetch(request_string, {
+                method: GET,
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                }
+            })
                 .then(function (response) {
                     if (!response.ok) {
                         throw new Error('Network response was not ok');
