@@ -66,7 +66,7 @@ login_button.addEventListener('click', async function (event) {
         user_object.email = email;
         user_object.pass = pass;
         console.log("Thông tin user mới : ", user_object);
-        fetch('https://api-create-new-user.onrender.com/Invoice', {
+        fetch('https://api-create-new-user.onrender.com/Invoice?kieuyeucau=dangky', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -111,19 +111,27 @@ login_button.addEventListener('click', async function (event) {
         const email_dang_nhap = input_email.value;
         const pass_dang_nhap = input_pass.value;
         try { 
-            const phan_hoi_tu_api = await fetch(`https://api-create-new-user.onrender.com/Invoice?email=${email_dang_nhap}&pass=${pass_dang_nhap}&kieuyeucau=dangnhap`); //gởi tên đó đến API   
+            const phan_hoi_tu_api = await fetch('https://api-create-new-user.onrender.com/Invoice?kieuyeucau=dangnhap', {
+                method: 'POST',
+                headers: {
+                            'Content-Type': 'application/json'
+                        },
+                body: JSON.stringify(email_dang_nhap,pass_dang_nhap) // Chuyển đổi mảng thành chuỗi JSON
+            }); //gởi tên đó đến API   
             if (!phan_hoi_tu_api.ok) {
                 throw new error(`lỗi HTTP : ${phan_hoi_tu_api.status}`);
             }
-            const data = await phan_hoi_tu_api.json(); //nhận lại phản hồi từ api    
-            console.log("User name : ", data.data.user_name);
-            console.log("ID : ", data.data.user_id);
-            login_button.style.backgroundColor = "aqua";
-            login_button.style.color = "white";
-            login_button.textContent = "Sign In";
-            sessionStorage.setItem('user_id', data.data.user_id);//gand giá trị id cho biến user_id và truyền đến phiên làm việc để trang được điều hướng tiếp theo có thể truy cập
-            sessionStorage.setItem('user_name', data.data.user_name);
-            window.location.href = 'listofinvoice.html'; // Chuyển hướng đến trang hóa đơn
+            else {
+                const data = await phan_hoi_tu_api.json(); //nhận lại phản hồi từ api    
+                console.log("User name : ", data.data.user_name);
+                console.log("ID : ", data.data.user_id);
+                login_button.style.backgroundColor = "aqua";
+                login_button.style.color = "white";
+                login_button.textContent = "Sign In";
+                sessionStorage.setItem('user_id', data.data.user_id);//gand giá trị id cho biến user_id và truyền đến phiên làm việc để trang được điều hướng tiếp theo có thể truy cập
+                sessionStorage.setItem('user_name', data.data.user_name);
+                window.location.href = 'listofinvoice.html'; // Chuyển hướng đến trang hóa đơn
+            }    
         }
         catch (loine) {
             console.error('Error fetching data:', loine);
