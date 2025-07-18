@@ -124,7 +124,7 @@ login_button.addEventListener('click', async function (event) {
             else {
                 const data = await phan_hoi_tu_api.json(); //nhận lại phản hồi từ api  
                 console.log("Token nhận từ api nè :", data.token);
-                // localStorage.setItem('token', data.token);// Lưu JWT vào local storage                
+                localStorage.setItem('token', data.token);// Lưu JWT vào local storage                
                 console.log("User name : ", data.data.user_name);
                 console.log("ID : ", data.data.user_id);
                 login_button.style.backgroundColor = "aqua";

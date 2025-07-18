@@ -4,6 +4,7 @@ const user_id = sessionStorage.getItem('user_id');
 //lấy giá trị token 
 const token = localStorage.getItem('token');
 const user_name = sessionStorage.getItem('user_name');
+console.log("token :", token);
 console.log('User ID:', user_id); // Có thể truy cập user_id ở đây
 console.log('User name:', user_name); // Có thể truy cập user_id ở đây
 //kết nối với restful api để gởi lệnh GET và lấy danh sách các hóa đơn và hiển thị lên phần List Of Invoice
@@ -28,7 +29,8 @@ let request_string = 'https://invoice-sever.onrender.com/Invoice?yeucau=layhoado
 fetch(request_string, {
     method: 'GET',
     headers: {
-    'Authorization': `Bearer ${token}`
+        'Authorization': `Bearer ${token}`
+        // 'Authorization': `Bearer`
   }
 })
     .then(function(response) {
