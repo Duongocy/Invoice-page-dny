@@ -1,90 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="index-css.css">
-</head>
-<body>
-    <div class = "listofinvoice">
-        <!-- Nội dung phần danh sách các invoice và phần tạo invoice mới -->
-            <div class="header-invoice-list">
-                <div class="co-title">
-                    List Of Invoice
-                </div>
-                <div class="user-name" id="user_name">
-                    User :
-                </div>
-            </div>   
-            <div class = "invoice-list"> <!--bảng chứa list các invoice -->
-                <table id = "banginvoice">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Title</th>
-                            <th>Customer</th>
-                            <th>Amount</th>
-                            <th>Date Create</th>
-                            <th>Detail</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    <!-- List của các hóa đơn sẽ hiển thị ở đây  -->
-                    </tbody>
-                </table>
-                <div id="loading" class="spiner"></div>
-            </div>         
-            <div class="createnewinvoice">
-                <a href="newinvoice.html"> <button class="pressbutton" id="creatinvoicebtn">Create New Invoice</button></a>
-            </div>
+    <link rel="stylesheet" href="index-css.css" />
+  </head>
+  <body>
+    <div class="listofinvoice">
+      <!-- Nội dung phần danh sách các invoice và phần tạo invoice mới -->
+      <div class="header-invoice-list">
+        <div class="co-title">List Of Invoice</div>
+        <div class="user-name" id="user_name">User :</div>
+      </div>
+      <div class="invoice-list">
+        <!--bảng chứa list các invoice -->
+        <table id="banginvoice">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Title</th>
+              <th>Customer</th>
+              <th>Amount</th>
+              <th>Date Create</th>
+              <th>Detail</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- List của các hóa đơn sẽ hiển thị ở đây  -->
+          </tbody>
+        </table>
+        <div id="loading" class="spiner"></div>
+      </div>
+      <div class="createnewinvoice">
+        <a href="newinvoice.html">
+          <button class="pressbutton" id="creatinvoicebtn">
+            Create New Invoice
+          </button></a
+        >
+      </div>
     </div>
-    <div class ="detailofinvoice">
-        <!-- Nội dung phần chi tiết từng invoice -->
-         <div class ="co-title">
-            Detail of invoice
-         </div>
-         <div class="khungchuainvoice">
-            <div class="invoiceheader">
-                <div id="invoicetitle">
-                    Invoice Title : Invoice
-                </div>
-                <div class="shopname">
-                    Shop : JDCHXAEC
-                </div>
-                <div id="customername">
-                    Customer : NA
-                </div>
-            </div>
-            <div class="containerbangchitietinvoice">
-                <!-- Bảng ghi chi tiết các mặc hàng trong hóa đơn -->
-                <table id = "bangchitietinvoice">
-                    <thead>
-                        <tr>
-                            <th>No</th>
-                            <th>Item Name</th>
-                            <th>Quantity</th>
-                            <th>Price</th>
-                            <th>Amount</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    <!-- List của các sản phẩm sẽ hiển thị ở đây  -->
-                    </tbody>
-                </table>
-                <div id="loading1" class="spiner hidden"></div>
-            </div>
-            <div class="invoivefooter">
-                <div class="invoicecreatdate" id="invoicecreatdateid">
-                    Invoice creat date : Jun-20-2025
-                </div>
-                <div class="invoicethankyou">
-                    --------------------------
-                </div>
-            </div>
-         </div>
-        <button class="pressbutton">Print Invoice</button>
+    <div class="detailofinvoice">
+      <!-- Nội dung phần chi tiết từng invoice -->
+      <div class="co-title">Detail of invoice</div>
+      <div class="khungchuainvoice">
+        <div class="invoiceheader">
+          <div id="invoicetitle">Invoice Title : Invoice</div>
+          <div class="shopname">Shop : JDCHXAEC</div>
+          <div id="customername">Customer : NA</div>
+        </div>
+        <div class="containerbangchitietinvoice">
+          <!-- Bảng ghi chi tiết các mặc hàng trong hóa đơn -->
+          <table id="bangchitietinvoice">
+            <thead>
+              <tr>
+                <th>No</th>
+                <th>Item Name</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Amount</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- List của các sản phẩm sẽ hiển thị ở đây  -->
+            </tbody>
+          </table>
+          <div id="loading1" class="spiner hidden"></div>
+        </div>
+        <div class="invoivefooter">
+          <div class="invoicecreatdate" id="invoicecreatdateid">
+            Invoice creat date : Jun-20-2025
+          </div>
+          <div class="invoicethankyou">--------------------------</div>
+        </div>
+      </div>
+      <button class="pressbutton">Print Invoice</button>
     </div>
     <script src="listofinvoice.js"></script>
-</body>
+  </body>
 </html>

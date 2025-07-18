@@ -122,7 +122,9 @@ login_button.addEventListener('click', async function (event) {
                 throw new Error(`lỗi HTTP : ${phan_hoi_tu_api.status}`);
             }
             else {
-                const data = await phan_hoi_tu_api.json(); //nhận lại phản hồi từ api    
+                const data = await phan_hoi_tu_api.json(); //nhận lại phản hồi từ api  
+                console.log("Token nhận từ api nè :", data.token);
+                // localStorage.setItem('token', data.token);// Lưu JWT vào local storage                
                 console.log("User name : ", data.data.user_name);
                 console.log("ID : ", data.data.user_id);
                 login_button.style.backgroundColor = "aqua";
