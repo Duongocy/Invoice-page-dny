@@ -18,7 +18,8 @@ const datecreate = document.getElementById('invoicecreatdateid');
 const titleinvoice = document.getElementById('invoicetitle');
 const invoicecustomer = document.getElementById('customername');
 const loadingElement = document.getElementById('loading');
-const loadingElement1=document.getElementById('loading1')
+const loadingElement1 = document.getElementById('loading1');
+const shop_name = document.getElementById('shopname');
 // Hiện spinner
 loadingElement.style.display = 'block';
 bang_invoice.style.display = 'none';
@@ -86,7 +87,9 @@ function update_invoice_list_to_table(invoices) {
             bang_chi_tiet_invoice.style.display = 'none';
             //hiển thị các thông tin cơ bản của hóa đơn 
             invoicecustomer.textContent = 'Customer name : '+hoadon.customer;    
-            titleinvoice.textContent = 'Invoice Title : '+hoadon.invoice_title;
+            titleinvoice.textContent = 'Invoice Title : ' + hoadon.invoice_title;
+            shop_name.textContent = 'Shop : ' + user_name;
+            datecreate.textContent =hoadon.invoice_date;
                
 
         //Lại dùng phương thức fetch để Lấy bảng chi tiết hóa đơn theo ID của hóa đơn
@@ -125,7 +128,8 @@ function update_detail_of_invoice(products) {
         while (tableitembody.rows.length > 0) {
             tableitembody.deleteRow(0);
         }
-        let tongtien = 0;
+    let tongtien = 0;
+    let thu_tu = 0;
         products.forEach(function(product){
         let newrow = tableitembody.insertRow();
         let productno =newrow.insertCell(0);
@@ -135,7 +139,8 @@ function update_detail_of_invoice(products) {
         let productamount=newrow.insertCell(4);
 
         //điền các giá trị vào bảng chi tiết hóa đơn
-        productno.textContent=product.itemno;
+        thu_tu = thu_tu + 1;    
+        productno.textContent=thu_tu;
         productname.textContent =product.product_name;
         productquantity.textContent=product.quantity;
         productprice.textContent=product.price;
