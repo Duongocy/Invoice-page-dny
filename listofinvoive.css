@@ -24,7 +24,6 @@ body {
     display:flex;
     flex-direction: column;
     justify-items: left;
-    height : 45px;
 }
 .listofinvoice {
     width: 62vw;
