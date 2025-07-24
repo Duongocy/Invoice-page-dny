@@ -231,6 +231,8 @@ td:nth-child(5) {
     background: linear-gradient(135deg, #ff416c, #ff4b2b);
     color: white;
     padding: 14px 28px;
+    margin-top:5px;
+    margin-bottom: 5px;
     font-size: 1.1rem;
     font-weight: bold;
     border: none;
