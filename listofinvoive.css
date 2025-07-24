@@ -28,6 +28,8 @@ body {
     display:flex;
     flex-direction: column;
     justify-items: left;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 .listofinvoice {
     width: 62vw;
