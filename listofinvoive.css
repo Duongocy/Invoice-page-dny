@@ -367,7 +367,7 @@ a{
     /* Kích thước */
     animation: spin 1s linear infinite;
     /* Hiệu ứng quay */
-    margin: 100px auto;
+    margin: 10px auto;
     /* Canh giữa */
 }
 @keyframes spin {
