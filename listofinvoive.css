@@ -219,6 +219,35 @@ td:nth-child(5) {
     /* Ẩn khi không cần */
 }
 
+#creatinvoicebtn,#print-invoice{
+    height: 40px;
+    width : 40%;
+    background: linear-gradient(135deg, #ff416c, #ff4b2b);
+    color: white;
+    padding: 14px 28px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(255, 75, 43, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    line-height: 1.1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#creatinvoicebtn:hover,#print-invoice:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 30px rgba(255, 65, 108, 0.5);
+    background: linear-gradient(135deg, #ff4b2b, #ff416c);
+}
+a{
+    text-decoration: none;
+}
 /* Phần dành cho màn hình điện thoại */
 @media only screen and (max-width: 768px) {
 /* Phần dành cho trang index  */
@@ -292,6 +321,30 @@ td:nth-child(5) {
     .invoivefooter{
         margin-bottom: 20px;
     }
+#creatinvoicebtn,
+#print-invoice {
+    height: 40px;
+    width: 80%;
+    background: linear-gradient(135deg, #ff416c, #ff4b2b);
+    color: white;
+    padding: 14px 28px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(255, 75, 43, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    line-height: 1.1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
 
     /* Phần hiển thị vong floading */
 .spiner{
