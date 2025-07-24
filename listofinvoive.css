@@ -277,7 +277,6 @@ a{
         display: flex;
         flex-direction: column;
         align-items: center;
-        height : 60%;
         width : 100%;
         overflow-y: auto;
         /* border: 1.5px solid black; */
