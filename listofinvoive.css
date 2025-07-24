@@ -114,7 +114,7 @@ body {
 /* Phần hiển thị chi tiết các món đồ từng invoice */
 .detailofinvoice {
     width: 35vw;
-    border: solid 1px rgba(2, 3, 18, 0.867);
+    border-left: solid 1px rgba(2, 3, 18, 0.867);
     display: flex;
     flex-direction: column;
     align-items: center;
