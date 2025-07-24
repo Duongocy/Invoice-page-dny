@@ -20,10 +20,11 @@ body {
     display:none;
     width:100%;
 }
-.header-invoice-list{
+.header-invoice-list, .invoiceheader{
     display:flex;
     flex-direction: column;
     justify-items: left;
+    height : 45px;
 }
 .listofinvoice {
     width: 62vw;
