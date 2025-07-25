@@ -75,15 +75,15 @@ body {
     margin: 100px auto;
     /* Canh giữa */
 }
-
-
-/*-------------------------------------*/
+/*----*/
 .createnewinvoice {
     display: flex;
     width: 100%;
     flex-direction: column;
     align-items: center;
 }
+/*-------------------------------------*/
+
 /*----*/
 .createnewinvoice a {
     display: flex;
@@ -278,15 +278,20 @@ th,td {
             transform: rotate(360deg);
         }
     }
+    .createnewinvoice {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
     #creatinvoicebtn,
     #print-invoice {
         height: 40px;
         width: 80%;
         background: linear-gradient(135deg, #ff416c, #ff4b2b);
         color: white;
-        padding: 14px 28px;
-        margin-top: 5px;
-        margin-bottom: 15px;
+        padding: 15px;
         font-size: 1.1rem;
         font-weight: bold;
         border: none;
@@ -326,7 +331,4 @@ th,td {
     }
     #banginvoice th:nth-child(1),#banginvoice td:nth-child(1) {display: none;}
     #banginvoice th:nth-child(5),#banginvoice td:nth-child(5) {display: none;}
-    .invoivefooter{
-        margin-bottom: 20px;
-    }
 }
