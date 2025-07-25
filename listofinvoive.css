@@ -6,232 +6,105 @@ body {
     justify-content: center;
 }
 /* Phần liệt kê danh sách các invoice theo user */
-.khungchuainvoice{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.listofinvoice {
+    width: 62vw;
 }
-.invoiceheader{
-    width:95%;
-}
-.header-invoice-list{
+/*--*/
+.co-title {
+    font-size: 30px;
     width: 95%;
 }
-.containerbangchitietinvoice{
-    width:95%;
-}
-#bangchitietinvoice{
-    display:none;
-    width:100%;
-}
-.header-invoice-list, .invoiceheader{
-    display:flex;
+/*--*/
+.header-invoice-list {
+    width: 95%;
+    display: flex;
     flex-direction: column;
     justify-items: left;
     padding-top: 20px;
     padding-bottom: 20px;
 }
-.listofinvoice {
-    width: 62vw;
-}   
-
-.co-title {
-    font-size: 30px;
-    width: 95%;
-}
-
+/*--*/
 .user-name {
     font-size: 16px;
 }
-
+/*--*/
 .invoice-list {
     display: flex;
     flex-direction: column;
     align-items: center;
     overflow-y: auto;
-    width:95%;
+    width: 95%;
 }
-
+/*--*/
 #banginvoice {
-    display:none;
+    display: none;
     width: 100%;
     table-layout: fixed;
     /* Sử dụng chế độ cố định cho bảng */
 }
-#banginvoice thead{
+/*--*/
+/* độ rộng các cột bảng invoice  */
+#banginvoice th:nth-child(1),#banginvoice td:nth-child(1) {width: 15%;text-align: center;}
+#banginvoice th:nth-child(2),#banginvoice td:nth-child(2) {width: 20%;}
+#banginvoice th:nth-child(3),#banginvoice td:nth-child(3) {width: 15%;}
+#banginvoice th:nth-child(4),#banginvoice td:nth-child(4) {width: 10%;text-align: center;}
+#banginvoice th:nth-child(5),#banginvoice td:nth-child(5) {width: 30%;text-align: center;}
+#banginvoice th:nth-child(6),#banginvoice td:nth-child(6) {width: 10%;text-align: center;}
+/*--*/
+#banginvoice thead {
     position: sticky;
     background-color: rgb(218, 122, 6);
-    top:0;
+    top: 0;
     z-index: 10;
 }
-
-#bangchitietinvoice thead {
-    background-color: rgb(218, 122, 6);
+/* Phần hiển thị vong floading */
+.spiner {
+    /* //Phần dành cho spiner */
+    border: 8px solid #f3f3f3;
+    /* Màu nền */
+    border-top: 8px solid #3498db;
+    /* Màu quay */
+    border-radius: 50%;
+    /* Hình tròn */
+    width: 50px;
+    /* Kích thước */
+    height: 50px;
+    /* Kích thước */
+    animation: spin 1s linear infinite;
+    /* Hiệu ứng quay */
+    margin: 100px auto;
+    /* Canh giữa */
 }
 
+
+/*-------------------------------------*/
 .createnewinvoice {
     display: flex;
-    width:100%;
+    width: 100%;
     flex-direction: column;
     align-items: center;
 }
-.createnewinvoice a{
-    display : flex;
+/*----*/
+.createnewinvoice a {
+    display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
+    text-decoration: none;
 }
-
-/* độ rộng các cột  */
-#banginvoice th:nth-child(1),
-#banginvoice td:nth-child(1) {
-    width: 15%;
-    text-align: center;
-}
-
-#banginvoice th:nth-child(2),
-#banginvoice td:nth-child(2) {
-    width: 20%;
-}
-
-#banginvoice th:nth-child(3),
-#banginvoice td:nth-child(3) {
-    width: 15%;
-}
-
-#banginvoice th:nth-child(4),
-#banginvoice td:nth-child(4) {
-    width: 10%;
-    text-align: center;
-}
-
-#banginvoice th:nth-child(5),
-#banginvoice td:nth-child(5) {
-    width: 30%;
-    text-align: center;
-}
-
-#banginvoice th:nth-child(6),
-#banginvoice td:nth-child(6) {
-    width: 10%;
-    text-align: center;
-}
-
-/* Phần hiển thị chi tiết các món đồ từng invoice */
-.detailofinvoice {
-    width: 35vw;
-    border-left: solid 1px rgba(2, 3, 18, 0.867);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.khungchuainvoice {
-    width: 100%;
-}
-
-.containerbangchitietinvoice {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-table { 
-    width: 95%;
-    border: solid 1px rgba(2, 3, 18, 0.867);
-}
-/* cân nhắc thay table bằng id bangchitietinvoice */
-
-th,
-td {
-    border: solid 1px rgba(2, 3, 18, 0.867);
-    height: 30px;
-}
-
-/* độ rộng các cột cho bảng chi tiết invoice  */
-#bangchitietinvoice th:nth-child(1),
-td:nth-child(1) {
-    width: 10%;
-    text-align: center;
-}
-
-#bangchitietinvoice th:nth-child(2),
-td:nth-child(2) {
-    width: 20%;
-    text-align: left;
-}
-
-#bangchitietinvoice th:nth-child(3),
-td:nth-child(3) {
-    width: 15%;
-    text-align: center;
-}
-
-#bangchitietinvoice th:nth-child(4),
-td:nth-child(4) {
-    width: 15%;
-    text-align: center;
-}
-
-#bangchitietinvoice th:nth-child(5),
-td:nth-child(5) {
-    width: 30%;
-    text-align: center;
-}
-
-.invoivefooter {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.pressbutton{
+/*----*/
+.pressbutton {
     margin-top: 20px;
-    width:50%;
-    height:35px;
+    width: 50%;
+    height: 35px;
 }
-
-/* Phần hiển thị vong floading */
-.spiner{
-    /* //Phần dành cho spiner */
-        border: 8px solid #f3f3f3;
-        /* Màu nền */
-        border-top: 8px solid #3498db;
-        /* Màu quay */
-        border-radius: 50%;
-        /* Hình tròn */
-        width: 50px;
-        /* Kích thước */
-        height: 50px;
-        /* Kích thước */
-        animation: spin 1s linear infinite;
-        /* Hiệu ứng quay */
-        margin: 100px auto;
-        /* Canh giữa */
-}
-@keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
-.hidden {
-    display: none;
-    /* Ẩn khi không cần */
-}
-
-#creatinvoicebtn,#print-invoice{
+#creatinvoicebtn,#print-invoice {
     height: 40px;
-    width : 40%;
+    width: 40%;
     background: linear-gradient(135deg, #ff416c, #ff4b2b);
     color: white;
     padding: 14px 28px;
-    margin-top:5px;
+    margin-top: 5px;
     margin-bottom: 5px;
     font-size: 1.1rem;
     font-weight: bold;
@@ -253,9 +126,88 @@ td:nth-child(5) {
     box-shadow: 0 12px 30px rgba(255, 65, 108, 0.5);
     background: linear-gradient(135deg, #ff4b2b, #ff416c);
 }
-a{
-    text-decoration: none;
+/*----*/
+.detailofinvoice {
+    width: 35vw;
+    border-left: solid 1px rgba(2, 3, 18, 0.867);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+/*----*/
+.khungchuainvoice{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/*----*/
+.invoiceheader{
+    width:95%;
+    display: flex;
+    flex-direction: column;
+    justify-items: left;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+/*----*/
+/* Phần hiển thị chi tiết các món đồ từng invoice */
+.containerbangchitietinvoice {
+    width: 95%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/*----*/
+#bangchitietinvoice{
+    display:none;
+    width:100%;
+}
+/*----*/
+#bangchitietinvoice thead {
+    background-color: rgb(218, 122, 6);
+}
+/*----*/
+/* độ rộng các cột cho bảng chi tiết invoice  */
+#bangchitietinvoice th:nth-child(1),td:nth-child(1) {width: 10%;text-align: center;}
+#bangchitietinvoice th:nth-child(2),td:nth-child(2) {width: 20%;text-align: left;}
+#bangchitietinvoice th:nth-child(3),td:nth-child(3) {width: 15%;text-align: center;}
+#bangchitietinvoice th:nth-child(4),td:nth-child(4) {width: 15%;text-align: center;}
+#bangchitietinvoice th:nth-child(5),td:nth-child(5) {width: 30%;text-align: center;}
+/*----*/
+.invoivefooter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* cài đặt chung cho các bảng trên trang*/
+table { 
+    width: 95%;
+    border: solid 1px rgba(2, 3, 18, 0.867);
+}
+/*----*/
+th,td {
+    border: solid 1px rgba(2, 3, 18, 0.867);
+    height: 30px;
+}
+/*lớp ẩn spiner*/
+.hidden {
+    display: none;
+}
+/*lớp quay spiner*/
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+
 /* Phần dành cho màn hình điện thoại */
 @media only screen and (max-width: 768px) {
 /* Phần dành cho trang index  */
@@ -269,16 +221,9 @@ a{
         width: 100%;
         border: none;
     }
-    .co-title,.user-name{
+    .co-title {
         padding-left: 0;
-    }
-    .invoice-list {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width : 100%;
-        overflow-y: auto;
-        /* border: 1.5px solid black; */
+        height: 15vh;
     }
     .header-invoice-list,
     .invoiceheader {
@@ -288,16 +233,73 @@ a{
         padding-top: 20px;
         padding-bottom: 20px;
     }
+    .user-name{
+        padding-left: 0;
+    }
+    .invoice-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width : 100%;
+        overflow-y: auto;
+    }
     #banginvoice {
         display:none;
-        width : 100%;
-        
+        width : 100%;     
     }
     #banginvoice thead{
         position: sticky;
         background-color: rgb(218, 122, 6);
         top:0;
         z-index: 10;
+    }
+    .spiner {
+        border: 8px solid #f3f3f3;
+        /* Màu nền */
+        border-top: 8px solid #3498db;
+        /* Màu quay */
+        border-radius: 50%;
+        /* Hình tròn */
+        width: 50px;
+        /* Kích thước */
+        height: 50px;
+        /* Kích thước */
+        animation: spin 1s linear infinite;
+        /* Hiệu ứng quay */
+        margin: 10px auto;
+        /* Canh giữa */
+    }
+    @keyframes spin {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+    #creatinvoicebtn,
+    #print-invoice {
+        height: 40px;
+        width: 80%;
+        background: linear-gradient(135deg, #ff416c, #ff4b2b);
+        color: white;
+        padding: 14px 28px;
+        margin-top: 5px;
+        margin-bottom: 15px;
+        font-size: 1.1rem;
+        font-weight: bold;
+        border: none;
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(255, 75, 43, 0.3);
+        cursor: pointer;
+        transition: all 0.3s ease;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        line-height: 1.1;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
     }
     .detailofinvoice {
         width: 100%;
@@ -308,7 +310,6 @@ a{
         align-items: center;
         margin-top: 20px;
     }
-
     .khungchuainvoice {
         width: 100%;
     }
@@ -323,68 +324,9 @@ a{
         display: none;
         width:100%;
     }
-    #banginvoice th:nth-child(1),
-    #banginvoice td:nth-child(1) {
-        display: none;
-    }
-
-    #banginvoice th:nth-child(5),
-    #banginvoice td:nth-child(5) {
-        display: none;
-    }
+    #banginvoice th:nth-child(1),#banginvoice td:nth-child(1) {display: none;}
+    #banginvoice th:nth-child(5),#banginvoice td:nth-child(5) {display: none;}
     .invoivefooter{
         margin-bottom: 20px;
     }
-#creatinvoicebtn,
-#print-invoice {
-    height: 40px;
-    width: 80%;
-    background: linear-gradient(135deg, #ff416c, #ff4b2b);
-    color: white;
-    padding: 14px 28px;
-    margin-top: 5px;
-    margin-bottom: 15px;
-    font-size: 1.1rem;
-    font-weight: bold;
-    border: none;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(255, 75, 43, 0.3);
-    cursor: pointer;
-    transition: all 0.3s ease;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    line-height: 1.1;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-}
-
-
-    /* Phần hiển thị vong floading */
-.spiner{
-    border: 8px solid #f3f3f3;
-    /* Màu nền */
-    border-top: 8px solid #3498db;
-    /* Màu quay */
-    border-radius: 50%;
-    /* Hình tròn */
-    width: 50px;
-    /* Kích thước */
-    height: 50px;
-    /* Kích thước */
-    animation: spin 1s linear infinite;
-    /* Hiệu ứng quay */
-    margin: 10px auto;
-    /* Canh giữa */
-}
-@keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
 }
