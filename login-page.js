@@ -33,7 +33,7 @@ input_name.addEventListener('input', async () => {
     thoi_gian_cho = setTimeout(async function() {
         const name_inputting = input_name.value.trim(); //lây tên đang được nhập vào 
         console.log(`https://api-create-new-user.onrender.com/Invoice?username=${name_inputting}`);
-        const res = await fetch(`https://api-create-new-user.onrender.com/Invoice?username=${name_inputting}&kieuyeucau=checkusertontai`); //gởi tên đó đến API   
+        const res = await fetch(`https://api-create-new-user.onrender.com/invoice?username=${name_inputting}&kieuyeucau=checkusertontai`); //gởi tên đó đến API   
         const data = await res.json(); //nhận lại phản hồi từ api
         console.log("Data nhận về là : ", data);   
         if (data.exists) {
@@ -66,7 +66,7 @@ login_button.addEventListener('click', async function (event) {
         user_object.email = email;
         user_object.pass = pass;
         console.log("Thông tin user mới : ", user_object);
-        fetch('https://api-create-new-user.onrender.com/Invoice?kieuyeucau=dangky', {
+        fetch('https://api-create-new-user.onrender.com/invoice?kieuyeucau=dangky', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -111,7 +111,7 @@ login_button.addEventListener('click', async function (event) {
         const email_dang_nhap = input_email.value;
         const pass_dang_nhap = input_pass.value;
         try { 
-            const phan_hoi_tu_api = await fetch('https://api-create-new-user.onrender.com/Invoice?kieuyeucau=dangnhap', {
+            const phan_hoi_tu_api = await fetch('https://api-create-new-user.onrender.com/invoice?kieuyeucau=dangnhap', {
                 method: 'POST',
                 headers: {
                             'Content-Type': 'application/json'

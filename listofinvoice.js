@@ -145,7 +145,7 @@ function update_detail_of_invoice(products) {
         productquantity.textContent=product.quantity;
         productprice.textContent=product.price;
         productamount.textContent=product.amount;
-        tongtien = tongtien + product.amount;
+        tongtien = Number(tongtien) + Number(product.amount);
         });
         //thêm 1 hàng cuối trong chi tiết hóa đơn để tính tổng tiền
         let lastrow = tableitembody.insertRow();
