@@ -168,8 +168,8 @@ td {
             width:100%;
     }     
     #createnewinvoicebutton,#add-new-item-btn{
-        width:90%;
-        height : 30px;
+        width:100%;
+        height : 40px;
         margin-top: 15px;
         background: linear-gradient(135deg, #0af56c, #0acdf0);
         color: white;
