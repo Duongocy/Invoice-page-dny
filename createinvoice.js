@@ -23,7 +23,7 @@ let tao_invoice = document.getElementById('tao-invoice');
 let submit_button = document.getElementById('submit-new-invoice-btn');
 
 //ẩn nút submit
-
+submit_button.classList.add('hidden');
 //Hàm cho nút nhấn Create New Invoice
 create_new_invoice_btn.addEventListener('click',function(){
     //điều gì xảy ra khi nhấn nút create new invoice 
@@ -87,6 +87,7 @@ add_new_item_btn.addEventListener('click',function(){
         console.log("Mảng đối tượng vừa cập nhật : ", product_aray);
         //chuyển con trỏ lại ô produc name
         product_name.focus();
+        submit_button.classList.remove('hidden');
     }
 })
 
