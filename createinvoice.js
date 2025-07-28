@@ -85,6 +85,8 @@ add_new_item_btn.addEventListener('click',function(){
         product_quantity.value = "";
         //In ra mảng sau khi thêm phần tử object vào 
         console.log("Mảng đối tượng vừa cập nhật : ", product_aray);
+        //chuyển con trỏ lại ô produc name
+        product_name.focus();
     }
 })
 
