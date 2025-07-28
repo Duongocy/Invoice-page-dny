@@ -14,10 +14,16 @@ let add_new_item_btn = document.getElementById('add-new-item-btn');
 let product_name = document.getElementById('new-item-name');
 let product_price = document.getElementById('new-item-price');
 let product_quantity = document.getElementById('new-item-quantity');
+let add_item_container = document.getElementById('add-item-to-invoice');
+
+//ẩn phần add item
+add_item_container.classList.add('hidden');
 
 //khai báo nút submit
 let submit_button = document.getElementById('submit-new-invoice-btn');
 
+//ẩn nút submit
+submit_button.classList.add('hidden');
 
 //Hàm cho nút nhấn Create New Invoice
 create_new_invoice_btn.addEventListener('click',function(){
@@ -27,7 +33,10 @@ create_new_invoice_btn.addEventListener('click',function(){
     console.log('Invoice title : ',input_invoice_title.value);
     console.log('Customer  : ',input_invoice_customer.value);
     if ((input_invoice_title.value.length!=0) && (input_invoice_customer.value.length!=0))
-        {   
+    {   
+            //hiển thị lại các nội dung để thêm item 
+            add_item_container.classList.remove('hidden');
+            submit_button.classList.remove('hidden');
             //tạo 1 mảng chứa các mục sản phẩm
             product_aray=[];
             product_object ={};
@@ -37,6 +46,7 @@ create_new_invoice_btn.addEventListener('click',function(){
             invoice_customer.textContent ='Customer : '+ input_invoice_customer.value;
             while(new_item_table_body.rows.length>0){
             new_item_table_body.deleteRow(0);
+            
         }
         }
 
