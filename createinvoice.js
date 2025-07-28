@@ -15,6 +15,7 @@ let product_name = document.getElementById('new-item-name');
 let product_price = document.getElementById('new-item-price');
 let product_quantity = document.getElementById('new-item-quantity');
 let add_item_container = document.getElementById('add-item-to-invoice');
+let tao_invoice = document.getElementById('tao-invoice');
 
 //ẩn phần add item
 add_item_container.classList.add('hidden');
@@ -34,9 +35,12 @@ create_new_invoice_btn.addEventListener('click',function(){
     console.log('Customer  : ',input_invoice_customer.value);
     if ((input_invoice_title.value.length!=0) && (input_invoice_customer.value.length!=0))
     {   
-            //hiển thị lại các nội dung để thêm item 
+        //hiển thị lại các nội dung để thêm item 
+
             add_item_container.classList.remove('hidden');
             submit_button.classList.remove('hidden');
+            input_invoice_title.classList.add('hidden');
+            input_invoice_customer.classList.add('hidden');
             //tạo 1 mảng chứa các mục sản phẩm
             product_aray=[];
             product_object ={};
@@ -46,7 +50,8 @@ create_new_invoice_btn.addEventListener('click',function(){
             invoice_customer.textContent ='Customer : '+ input_invoice_customer.value;
             while(new_item_table_body.rows.length>0){
             new_item_table_body.deleteRow(0);
-            
+            //ẩn luôn nút tạo invoice
+            create_new_invoice_btn.classList.add('hidden');    
         }
         }
 
@@ -111,6 +116,10 @@ submit_button.addEventListener('click',function(){
         .then(data => {
             console.log('Lưu invoice thành công :', data);
             submit_button.textContent = "Save OK!"
+            //hien thi lai 1 so thu : 
+            create_new_invoice_btn.classList.remove('hidden');
+            add_item_container.classList.add('hidden');
+            submit_button.classList.add('hidden');
             //xóa bảng item 
             while(new_item_table_body.rows.length>0){
                 new_item_table_body.deleteRow(0);
