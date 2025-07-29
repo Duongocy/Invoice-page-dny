@@ -185,11 +185,11 @@ body {
 /* cài đặt chung cho các bảng trên trang*/
 table { 
     width: 95%;
-    border: solid 1px rgba(2, 3, 18, 0.867);
+    /* border: solid 1px rgba(2, 3, 18, 0.867); */
 }
 /*----*/
 th,td {
-    border: solid 1px rgba(2, 3, 18, 0.867);
+    border: solid 1px rgba(122, 201, 238, 0.867);
     height: 30px;
 }
 /*lớp ẩn spiner*/
@@ -332,4 +332,15 @@ th,td {
     }
     #banginvoice th:nth-child(1),#banginvoice td:nth-child(1) {display: none;}
     #banginvoice th:nth-child(5),#banginvoice td:nth-child(5) {display: none;}
+    table {
+            width: 95%;
+            /* border: solid 1px rgba(2, 3, 18, 0.867); */
+        }
+    
+        /*----*/
+        th,
+        td {
+            border: solid 1px rgba(122, 201, 238, 0.867);
+            height: 30px;
+        }
 }
