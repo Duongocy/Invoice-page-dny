@@ -7,7 +7,12 @@
     <link rel="stylesheet" href="listofinvoive.css" />
     <link rel="icon" href="iconinv.ico" type="image/x-icon">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://unpkg.com/jspdf@2.5.1/dist/jspdf.umd.min.js"></script> 
+    <!-- Font đã embed -->
+    <script src="Roboto-normal.js"></script>
+
   </head>
   <body>
     <div class="listofinvoice">
@@ -48,7 +53,7 @@
     <div class="detailofinvoice">
       <!-- Nội dung phần chi tiết từng invoice -->
       <div class="co-title">Detail of invoice</div>
-      <div class="khungchuainvoice">
+      <div class="khungchuainvoice" id="print-area">
         <div class="invoiceheader">
           <div id="invoicetitle">Invoice Title : invoice</div>
           <div id="shopname">Shop : shop name</div>

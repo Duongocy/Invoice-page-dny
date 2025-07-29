@@ -159,32 +159,14 @@ function update_detail_of_invoice(products) {
 } 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // hàm xuất pdf khi nhấn nút print invoice
-print_invoice_btn.addEventListener('click', async () => { 
-            const { jsPDF } = window.jspdf;
-            const pdf = new jsPDF();
-
-            // Thêm nội dung từ HTML
-            const print_customer = invoicecustomer.textContent;
-            pdf.text(print_customer, 10, 10); // Thêm tiêu đề
-
-            // Thêm đoạn văn bản từ nội dung
-            const print_invoice_title = titleinvoice.textContent;
-            pdf.text(print_invoice_title, 10, 20);
-    
-            const print_shop_name = shop_name.textContent;
-            pdf.text(print_shop_name, 10, 30);
-    
-            const print_date = datecreate.textContent;
-            pdf.text(print_date, 10, 40);
-            // Thêm bảng từ HTML
-            await pdf.html(document.getElementById('bangchitietinvoice'), {
-                x: 10,
-                y: 50,
-                width: 180,
-                html2canvas: { scale: 2 }
-            });
-
-            // Lưu PDF
-            pdf.save('file.pdf');
-            console.log("printed");
-})
+print_invoice_btn.addEventListener('click', async () => {
+    const element = document.getElementById('print-area'); // phần DOM bạn muốn in
+    html2pdf().set({
+        margin: 10,
+        filename: 'file.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+    }).from(element).save();
+    console.log("printed");
+});
