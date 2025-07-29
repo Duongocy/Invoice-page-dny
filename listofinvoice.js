@@ -186,4 +186,5 @@ print_invoice_btn.addEventListener('click', async () => {
 
             // Lưu PDF
             pdf.save('file.pdf');
+            console.log("printed");
 })
