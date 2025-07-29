@@ -20,6 +20,7 @@ const invoicecustomer = document.getElementById('customername');
 const loadingElement = document.getElementById('loading');
 const loadingElement1 = document.getElementById('loading1');
 const shop_name = document.getElementById('shopname');
+const print_invoice_btn = document.getElementById('print-invoice');
 // Hiện spinner
 loadingElement.style.display = 'block';
 bang_invoice.style.display = 'none';
@@ -156,3 +157,33 @@ function update_detail_of_invoice(products) {
         let totalamount = lastrow.insertCell(4);
         totalamount.textContent = tongtien;
 } 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// hàm xuất pdf khi nhấn nút print invoice
+print_invoice_btn.addEventListener('click', async () => { 
+            const { jsPDF } = window.jspdf;
+            const pdf = new jsPDF();
+
+            // Thêm nội dung từ HTML
+            const print_customer = invoicecustomer.textContent;
+            pdf.text(print_customer, 10, 10); // Thêm tiêu đề
+
+            // Thêm đoạn văn bản từ nội dung
+            const print_invoice_title = titleinvoice.textContent;
+            pdf.text(print_invoice_title, 10, 20);
+    
+            const print_shop_name = shop_name.textContent;
+            pdf.text(print_shop_name, 10, 30);
+    
+            const print_date = datecreate.textContent;
+            pdf.text(print_date, 10, 40);
+            // Thêm bảng từ HTML
+            await pdf.html(document.getElementById('bangchitietinvoice'), {
+                x: 10,
+                y: 50,
+                width: 180,
+                html2canvas: { scale: 2 }
+            });
+
+            // Lưu PDF
+            pdf.save('file.pdf');
+})
