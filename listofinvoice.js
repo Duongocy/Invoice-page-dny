@@ -162,18 +162,22 @@ function update_detail_of_invoice(products) {
 print_invoice_btn.addEventListener('click', async () => {
   const original = document.getElementById("print-area"); 
   const cloneWrapper = document.getElementById("print-area-clone");
+
+  cloneWrapper.setAttribute("style", `
+    width: 210mm;
+    margin: 0 auto;
+    padding: 20px;
+    background: white;
+    box-sizing: border-box;
+  `);  
+
   cloneWrapper.innerHTML = "";
   const clone = original.cloneNode(true);
 
   // ✅ Căn chỉnh cho nội dung bên trong
-clone.setAttribute("style", `
-    width: 210mm;
-    height: auto;
-    padding-top:40px;
-    background: green;
+  clone.setAttribute("style", `
+    width: 100%;
     box-sizing: border-box;
-    display: block;
-    border:solid 1px red;
   `);
 
   // ✅ Force bảng nằm giữa
@@ -184,7 +188,8 @@ clone.setAttribute("style", `
   });
 
   cloneWrapper.appendChild(clone);
-  cloneWrapper.style.display = "block"; 
+    
+
   await new Promise((resolve) => setTimeout(resolve, 300));
   
   html2pdf().set({
@@ -195,7 +200,7 @@ clone.setAttribute("style", `
       scale: 2,
       scrollY: 0,
       scrollX: 0,
-      windowWidth: 793,
+      windowWidth: 1024,
       backgroundColor: "#fff"
     },
     jsPDF: {
