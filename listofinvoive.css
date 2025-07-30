@@ -195,6 +195,11 @@ body {
     flex-direction: column;
     align-items: center;
 }
+.print-area-clone {
+    width: 210mm;
+    padding: 30mm 20mm 20mm 20mm;
+    margin: 0 auto;
+}
 /* cài đặt chung cho các bảng trên trang*/
 table { 
     width: 95%;
@@ -365,6 +370,12 @@ body{
         }
     
         /*----*/
+    .print-area-clone{
+        width: 210mm;
+        padding: 30mm 20mm 20mm 20mm;
+        margin: 0 auto;
+    }
+    
         th,
         td {
             border-bottom: solid 1px rgba(5, 62, 88, 0.867);

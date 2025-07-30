@@ -167,7 +167,7 @@ print_invoice_btn.addEventListener('click', async () => {
 
   // ✅ Căn chỉnh cho nội dung bên trong
 clone.setAttribute("style", `
-    width: 100mm;
+    width: 210mm;
     height: auto;
     padding-top:40px;
     background: green;
@@ -195,7 +195,7 @@ clone.setAttribute("style", `
       scale: 2,
       scrollY: 0,
       scrollX: 0,
-      windowWidth: 768,
+      windowWidth: 793,
       backgroundColor: "#fff"
     },
     jsPDF: {
