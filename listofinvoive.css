@@ -1,10 +1,17 @@
 body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.listofinvoicepage {
     font-family: Arial, sans-serif;
     display: flex;
     flex-direction: row;
     height: 97vh;
     background-color: #0be7a5;
     justify-content: center;
+    position: relative;
 }
 /* Phần liệt kê danh sách các invoice theo user */
 .listofinvoice {
@@ -134,14 +141,20 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-items: center;
 }
 /*----*/
 .khungchuainvoice{
-    width: 100%;
+    width: 95%;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    justify-content: center;
+    align-items: start;
+    box-sizing: border-box;
+    
 }
+
 /*----*/
 .invoiceheader{
     width:95%;
@@ -213,11 +226,18 @@ th,td {
 /* Phần dành cho màn hình điện thoại */
 @media only screen and (max-width: 768px) {
 /* Phần dành cho trang index  */
-    body {
+body{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+}
+    .listofinvoicepage {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: start;
+        position : relative;
     }
 
     .listofinvoice {
@@ -310,15 +330,20 @@ th,td {
     }
     .detailofinvoice {
         width: 100%;
-        border:none;
-        /* height:50vh; */
+        border: none;
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-top: 20px;
+        justify-items: center;
     }
     .khungchuainvoice {
         width: 100%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        box-sizing: border-box;
     }
     .containerbangchitietinvoice {
         width:100%;

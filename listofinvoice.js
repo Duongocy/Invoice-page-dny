@@ -160,14 +160,51 @@ function update_detail_of_invoice(products) {
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // hàm xuất pdf khi nhấn nút print invoice
 print_invoice_btn.addEventListener('click', async () => {
-    const element = document.getElementById('print-area'); // phần DOM bạn muốn in
-    html2pdf().set({
-        margin: 10,
-        filename: `${titleinvoice.textContent}.pdf`,
-        image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: { scale: 2 },
-        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
-        pagebreak: { mode: 'avoid-all' }
-    }).from(element).save();
-    console.log("printed");
+  const original = document.getElementById("print-area"); 
+  const cloneWrapper = document.getElementById("print-area-clone");
+  cloneWrapper.innerHTML = "";
+  const clone = original.cloneNode(true);
+
+  // ✅ Căn chỉnh cho nội dung bên trong
+clone.setAttribute("style", `
+    width: 100mm;
+    height: auto;
+    padding-top:40px;
+    background: green;
+    box-sizing: border-box;
+    display: block;
+    border:solid 1px red;
+  `);
+
+  // ✅ Force bảng nằm giữa
+  clone.querySelectorAll("table").forEach(tbl => {
+    tbl.style.marginLeft = "auto";
+    tbl.style.marginRight = "auto";
+    tbl.style.width = "95%";
+  });
+
+  cloneWrapper.appendChild(clone);
+  cloneWrapper.style.display = "block"; 
+  await new Promise((resolve) => setTimeout(resolve, 300));
+  
+  html2pdf().set({
+    margin : 0,
+    filename: "invoice.pdf",
+    image: { type: "jpeg", quality: 1 },
+    html2canvas: {
+      scale: 2,
+      scrollY: 0,
+      scrollX: 0,
+      windowWidth: 768,
+      backgroundColor: "#fff"
+    },
+    jsPDF: {
+      unit: "mm",
+      format: "a4",
+      orientation: "portrait"
+    },
+    pagebreak: { mode: ["css", "legacy"] }
+  }).from(cloneWrapper).save().then(() => {
+    cloneWrapper.style.display = "none";
+  });
 });

@@ -11,6 +11,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
   </head>
   <body>
+    <div class="listofinvoicepage">
     <div class="listofinvoice">
       <!-- Nội dung phần danh sách các invoice và phần tạo invoice mới -->
       <div class="co-title">List Of Invoice</div>
@@ -49,6 +50,7 @@
     <div class="detailofinvoice">
       <!-- Nội dung phần chi tiết từng invoice -->
       <div class="co-title">Detail of invoice</div>
+      <!-- tạo vùng ảo để chứa nội dung cần in ra  -->
       <div class="khungchuainvoice" id="print-area">
         <div class="invoiceheader">
           <div id="invoicetitle">Invoice Title : invoice</div>
@@ -79,9 +81,11 @@
           </div>
           <div class="invoicethankyou">--------------------------</div>
         </div>
-      </div>
+      </div>      
       <button id="print-invoice">Print Invoice</button>
     </div>
+    </div>
+    <div id="print-area-clone" style="display:none;"></div>
     <script src="listofinvoice.js"></script>
   </body>
 </html>

@@ -317,7 +317,12 @@ td {
             align-items: center;
         }          
         .khungchuainvoice {
-            width : 95%;
+            width: 210mm;
+            /* A4 chiều ngang */
+            min-height: 297mm;
+            /* A4 chiều dọc */
+            box-sizing: border-box;
+            overflow: visible !important;
         }  
         #banginvoice th:nth-child(1),#banginvoice td:nth-child(1){display :none;} 
         #banginvoice th:nth-child(5),#banginvoice td:nth-child(5){display: none;}      
