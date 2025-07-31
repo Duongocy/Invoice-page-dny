@@ -160,56 +160,7 @@ function update_detail_of_invoice(products) {
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // hàm xuất pdf khi nhấn nút print invoice
 print_invoice_btn.addEventListener('click', async () => {
-  const original = document.getElementById("print-area"); 
-  const cloneWrapper = document.getElementById("print-area-clone");
-
-  cloneWrapper.setAttribute("style", `
-    width: 210mm;
-    margin: 0 auto;
-    padding: 20px;
-    background: white;
-    box-sizing: border-box;
-  `);  
-
-  cloneWrapper.innerHTML = "";
-  const clone = original.cloneNode(true);
-
-  // ✅ Căn chỉnh cho nội dung bên trong
-  clone.setAttribute("style", `
-    width: 100%;
-    box-sizing: border-box;
-  `);
-
-  // ✅ Force bảng nằm giữa
-  clone.querySelectorAll("table").forEach(tbl => {
-    tbl.style.marginLeft = "auto";
-    tbl.style.marginRight = "auto";
-    tbl.style.width = "95%";
-  });
-
-  cloneWrapper.appendChild(clone);
-    
-
-  await new Promise((resolve) => setTimeout(resolve, 300));
-  
-  html2pdf().set({
-    margin : 0,
-    filename: "invoice.pdf",
-    image: { type: "jpeg", quality: 1 },
-    html2canvas: {
-      scale: 2,
-      scrollY: 0,
-      scrollX: 0,
-      windowWidth: 1024,
-      backgroundColor: "#fff"
-    },
-    jsPDF: {
-      unit: "mm",
-      format: "a4",
-      orientation: "portrait"
-    },
-    pagebreak: { mode: ["css", "legacy"] }
-  }).from(cloneWrapper).save().then(() => {
-    cloneWrapper.style.display = "none";
-  });
+    const data = document.getElementById("print-area").innerHTML;
+    localStorage.setItem("contentToPrint", data);
+    window.open("print.html", "_blank");
 });

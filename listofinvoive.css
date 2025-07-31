@@ -190,11 +190,7 @@ body {
     flex-direction: column;
     align-items: center;
 }
-.print-area-clone {
-    width: 210mm;
-    padding: 30mm 20mm 20mm 20mm;
-    margin: 0 auto;
-}
+
 /* cài đặt chung cho các bảng trên trang*/
 table { 
     width: 95%;
@@ -225,12 +221,12 @@ th,td {
 /* Phần dành cho trang index  */
 
     body {
+        font-family: Arial, sans-serif;
         display: flex;
         flex-direction: column;
-        align-items: center;
-        justify-content: start;
-        position : relative;
-        width:100%;
+        background-color: #0be7a5;
+        align-items: start;
+        justify-content: center;
     }
 
     .listofinvoice {
@@ -358,12 +354,6 @@ th,td {
         }
     
         /*----*/
-    .print-area-clone{
-        width: 210mm;
-        padding: 30mm 20mm 20mm 20mm;
-        margin: 0 auto;
-    }
-    
         th,
         td {
             border-bottom: solid 1px rgba(5, 62, 88, 0.867);

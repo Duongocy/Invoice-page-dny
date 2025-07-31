@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trang In</title>
+    <link rel="stylesheet" href="print.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+
+<body>
+    <div class="page-content" id="print-target"></div>
+    <button onclick="printPDF()">In PDF</button>
+
+    <script>
+        // Lấy nội dung từ localStorage
+        const content = localStorage.getItem("contentToPrint");
+        const  print_target = document.getElementById("print-target");
+
+        if (content) {
+                print_target.innerHTML = content;
+            } else {
+                print_target.innerHTML = "<p style='color:red'>Không tìm thấy dữ liệu cần in 😢</p>";
+            }           
+        function printPDF() {
+            // html2pdf().set({
+            //     margin: 0,
+            //     filename: 'invoice.pdf',
+            //     image: { type: 'jpeg', quality: 2 },
+            //     html2canvas: {
+            //         scale: 2,
+            //         scrollY: 0,
+            //         backgroundColor: '#fff',
+            //         windowWidth: 1200
+            //     },
+            //     jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            // }).from(print_target).save();
+
+            //////////////////////////////////////////////////////////////////////////////
+            // html2canvas(print_target, {
+            //     scrollY: 0,
+            //     scrollX: 0,
+            //     backgroundColor: "#fff",
+            //     scale: 1,
+            //     windowWidth: 793 // hoặc bất kỳ bạn đang thử
+            // }).then(canvas => {
+            //     // Gắn canvas lên trang luôn
+            //     document.body.innerHTML = ''; // xóa mọi thứ để nhìn canvas rõ
+            //     document.body.appendChild(canvas);
+            // });
+            const { jsPDF } = window.jspdf;
+            const pdf = new jsPDF();
+            html2canvas(print_target, {
+                scrollY: 0,
+                scrollX: 0,
+                backgroundColor: "#fff",
+                scale: 2,
+                windowWidth: 793
+            }).then(canvas => {
+                const imgData = canvas.toDataURL("image/jpeg", 1.0);
+
+                const pdf = new jsPDF("p", "mm", "a4");
+                const pageWidth = 210;
+                const pageHeight = 297;
+
+                const imgProps = pdf.getImageProperties(imgData);
+                const imgWidth = pageWidth;
+                const imgHeight = (imgProps.height * imgWidth) / imgProps.width;
+
+                // Canh giữa ảnh trong trang A4
+                const x = (pageWidth - imgWidth) / 2;
+                const y = 0;
+
+                pdf.addImage(imgData, "JPEG", x, y, imgWidth, imgHeight);
+                pdf.save("invoice.pdf");
+            });
+        }
+        
+    </script>
+</body>
+
+</html>
