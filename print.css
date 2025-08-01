@@ -40,18 +40,26 @@ th,td {
 #bangchitietinvoice th:nth-child(4),td:nth-child(4) {width: 20%;text-align: right;}
 #bangchitietinvoice th:nth-child(5),td:nth-child(5) {width: 25%;text-align: right;}
 
-@media screen and (max-width: 768px) {
-    /* Không thay đổi gì cả → giữ nguyên layout A4 */
- 
-html{
-    overflow-x: hidden;
-}    
+@media screen and (max-width: 210mm) {
+    /* Không thay đổi gì cả → giữ nguyên layout A4 */  
 body {
    
-  width: 210mm; /* Độ rộng cố định */
-  margin: 0 auto; /* Căn giữa theo chiều ngang */
-  padding: 20px; /* Khoảng cách từ mép */
+  /* width: 100%; 
+  margin: 0 auto; 
+  padding: 20px; 
   box-sizing: border-box; 
+  background: #f5f5f5;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center; */
+
+  width: 100%;
+    /* Độ rộng co lại theo chiều rộng màn hình */
+  margin: 0 auto;
+    /* Căn giữa theo chiều ngang */
+  box-sizing: border-box;
   background: #f5f5f5;
   font-family: Arial, sans-serif;
   display: flex;
@@ -60,7 +68,8 @@ body {
   align-items: center;
 }  
 .page-content {
-  width: 210mm;
+  /* width: 210mm; */
+  width:100%;
   padding: 30mm 20mm;
   background: white;
   box-sizing: border-box;
