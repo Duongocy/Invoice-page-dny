@@ -1,9 +1,10 @@
 
-//lấy giá trị biến user_id được truyền từ trang login đến 
+//lấy giá trị biến user_id , user name được truyền từ trang login đến 
 const user_id = sessionStorage.getItem('user_id');
-//lấy giá trị token 
-const token = localStorage.getItem('token');
 const user_name = sessionStorage.getItem('user_name');
+//lấy giá trị token đã tạo khi login
+const token = localStorage.getItem('token');
+
 console.log("token :", token);
 console.log('User ID:', user_id); // Có thể truy cập user_id ở đây
 console.log('User name:', user_name); // Có thể truy cập user_id ở đây
@@ -21,9 +22,13 @@ const loadingElement = document.getElementById('loading');
 const loadingElement1 = document.getElementById('loading1');
 const shop_name = document.getElementById('shopname');
 const print_invoice_btn = document.getElementById('print-invoice');
+const detail_of_invoice = document.getElementById('detailofinvoice');
 // Hiện spinner
 loadingElement.style.display = 'block';
 bang_invoice.style.display = 'none';
+//ẩn vùng detail of invoice
+detail_of_invoice.classList.add('hidden');
+
 //hiển thị user name
 user_name_element.textContent = user_name +" (ID : "+user_id+")";
 //Phương thức fetch để gởi yêu cầu đến hàm restful api phía sever
@@ -83,11 +88,13 @@ function update_invoice_list_to_table(invoices) {
             while (tableitembody.rows.length > 0) {
                 tableitembody.deleteRow(0);
             }
+            //Hiện detail of invoice 
+            detail_of_invoice.classList.remove('hidden');
             // Hiện spinner
             loadingElement1.style.display = 'block';
             bang_chi_tiet_invoice.style.display = 'none';
             //hiển thị các thông tin cơ bản của hóa đơn 
-            invoicecustomer.textContent = 'Customer name : '+hoadon.customer;    
+            invoicecustomer.textContent = 'Customer name : '+ hoadon.customer;    
             titleinvoice.textContent = 'Invoice Title : ' + hoadon.invoice_title;
             shop_name.textContent = 'Shop : ' + user_name;
             datecreate.textContent =hoadon.invoice_date;

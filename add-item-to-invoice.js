@@ -1,8 +1,17 @@
 //lấy giá trị biến user_id được truyền từ trang login đến 
 const user_id = sessionStorage.getItem('user_id');
 const user_name = sessionStorage.getItem('user_name');
+const invoice_id = sessionStorage.getItem('invoice_id');
+const invoice_date = sessionStorage.getItem('invoice_date');
+const new_invoice_title = sessionStorage.getItem('new_invoice_title');
+const new_customer = sessionStorage.getItem('new_customer');
+//////////////////////////////////////////////////////////////////////////////
 console.log('User ID:', user_id); // Có thể truy cập user_id ở đây
 console.log('User name:', user_name); // Có thể truy cập user_id ở đây
+console.log('Invoice ID:', invoice_id); // Có thể truy cập user_id ở đây
+console.log('Invoice creating date :', invoice_date); // Có thể truy cập user_id ở đây
+console.log('Invoice title:', new_invoice_title); // Có thể truy cập user_id ở đây
+console.log('Customer :', new_customer); // Có thể truy cập user_id ở đây
 let create_new_invoice_btn = document.getElementById('createnewinvoicebutton');
 let invoice_title = document.getElementById('newinvoice-title');
 let invoice_customer = document.getElementById('customer-name');
@@ -25,31 +34,9 @@ let submit_button = document.getElementById('submit-new-invoice-btn');
 //ẩn nút submit
 submit_button.classList.add('hidden');
 //Hàm cho nút nhấn Create New Invoice
-create_new_invoice_btn.addEventListener('click',function(){
-    //điều gì xảy ra khi nhấn nút create new invoice 
-    submit_button.textContent = "Submit Invoice!"
-    console.log("Điều gì xảy ra khi nhấn nút create new invoice");
-    console.log('Invoice title : ',input_invoice_title.value);
-    console.log('Customer  : ',input_invoice_customer.value);
-    if ((input_invoice_title.value.length!=0) && (input_invoice_customer.value.length!=0))
-    {   
-        //hiển thị lại các nội dung để thêm item 
-            //tạo 1 mảng chứa các mục sản phẩm
-            product_aray=[];
-            product_object ={};
-            invoice_id = String(Date.now());
-            invoice_date = new Date();
-            invoice_title.textContent = 'Invoice title : '+input_invoice_title.value;
-            invoice_customer.textContent ='Customer : '+ input_invoice_customer.value;
-            while(new_item_table_body.rows.length>0){
-            new_item_table_body.deleteRow(0);
-            //ẩn luôn nút tạo invoice
-        }
-        }
-
-})
-
 //Hàm cho nút Add Item
+product_aray=[];
+product_object ={};
 let thutu = 0;//khai báo 1 biến thứ tự để điền vào cột đầu tiên (cột No)
 add_new_item_btn.addEventListener('click',function(){
     //Việc cần làm khi nhấn nút add item
@@ -67,12 +54,13 @@ add_new_item_btn.addEventListener('click',function(){
         product_price_cell.textContent = Number(product_price.value).toLocaleString("en-US");
         product_quantity_cell.textContent = Number(product_quantity.value).toLocaleString("en-US");
         //nhập các giá trị vừa điền vào biến đối tượng (để lưu vào cơ sở dữ liệu)
+        
         product_object["user_id"] = user_id;
         product_object["user_name"] = user_name;
         product_object["invoice_id"]=invoice_id;
-        product_object["invoice_title"] = input_invoice_title.value;
+        product_object["invoice_title"] = new_invoice_title;
         product_object["invoice_date"] = invoice_date;
-        product_object["customer"] = input_invoice_customer.value;
+        product_object["customer"] = new_customer;
         product_object["product_name"]=product_name.value;
         product_object["price"]=product_price.value;
         product_object["quantity"]=product_quantity.value;
@@ -119,10 +107,6 @@ submit_button.addEventListener('click',function(){
             product_name.value="";
             product_price.value="";
             product_quantity.value="";
-            input_invoice_title.value="";
-            invoice_customer.textContent="";
-            invoice_title.textContent="";
-            input_invoice_customer.value="";
             product_aray=[];
         })
         .catch(error => {

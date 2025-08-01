@@ -48,7 +48,8 @@ input_name.addEventListener('input', async () => {
 //Tạo user mới 
 login_button.addEventListener('click', async function (event) {
     event.preventDefault(); //ngăn chặn việc trình duyệt của iphone đòi lưu mật khẩu
-    if (input_name.value.length > 0 && input_email.checkValidity() && input_pass.value.length>0 && confirm_input_pass.value.length>0 && input_pass.value === confirm_input_pass.value && !login_status) {
+    if (input_name.value.length > 0 && input_email.checkValidity() && input_pass.value.length > 0 && confirm_input_pass.value.length > 0 && input_pass.value === confirm_input_pass.value && !login_status) {
+        //Trường hợp yêu cầu của client là tạo user mới 
         console.log("Giá trị hợp lệ");
         login_button.style.backgroundColor = "yellow";
         login_button.style.color = "blue";
@@ -90,7 +91,7 @@ login_button.addEventListener('click', async function (event) {
                     // Sau khi login thành công
                     sessionStorage.setItem('user_id', id);//gand giá trị id cho biến user_id và truyền đến phiên làm việc để trang được điều hướng tiếp theo có thể truy cập
                     sessionStorage.setItem('user_name', name);
-                    window.location.href = 'index.html'; // Chuyển hướng đến trang hóa đơn
+                    window.location.href = 'index.html'; // Chuyển lại trang log-in
                 }
                 else {
                     alert("Email đã đăng ký trước đây.");
@@ -103,7 +104,8 @@ login_button.addEventListener('click', async function (event) {
             console.log("Lỗi khi gởi requesr : ",error.message);   
             });
     }
-    else if (input_email.checkValidity() && input_pass.value.length>0 && login_status){
+    else if (input_email.checkValidity() && input_pass.value.length > 0 && login_status) {
+        //Trường họp yêu cầu của client là login 
         console.log("Đăng nhập..");
         login_button.style.backgroundColor = "yellow";
         login_button.style.color = "blue";

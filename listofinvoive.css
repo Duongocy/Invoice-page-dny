@@ -225,8 +225,8 @@ th,td {
         display: flex;
         flex-direction: column;
         background-color: #0be7a5;
-        align-items: start;
-        justify-content: center;
+        align-items: center;
+        justify-content: flex-start;
     }
 
     .listofinvoice {
