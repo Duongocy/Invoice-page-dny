@@ -70,7 +70,7 @@ body {
 .page-content {
   /* width: 210mm; */
   width:100%;
-  padding: 10mm 10mm;
+  padding: 20mm 10mm;
   background: white;
   box-sizing: border-box;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
