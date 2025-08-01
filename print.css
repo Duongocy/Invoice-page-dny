@@ -35,15 +35,19 @@ th,td {
         height: 30px;
     }
 #bangchitietinvoice th:nth-child(1),td:nth-child(1) {width: 10%;text-align: center;}
-#bangchitietinvoice th:nth-child(2),td:nth-child(2) {width: 20%;text-align: left;}
-#bangchitietinvoice th:nth-child(3),td:nth-child(3) {width: 15%;text-align: center;}
+#bangchitietinvoice th:nth-child(2),td:nth-child(2) {width: 35%;text-align: left;}
+#bangchitietinvoice th:nth-child(3),td:nth-child(3) {width: 25%;text-align: center;}
 #bangchitietinvoice th:nth-child(4),td:nth-child(4) {width: 15%;text-align: left;}
-#bangchitietinvoice th:nth-child(5),td:nth-child(5) {width: 30%;text-align: right;}
+#bangchitietinvoice th:nth-child(5),td:nth-child(5) {width: 15%;text-align: right;}
 
 @media screen and (max-width: 768px) {
     /* Không thay đổi gì cả → giữ nguyên layout A4 */
  
+html{
+    overflow-x: hidden;
+}    
 body {
+   
   width: 210mm; /* Độ rộng cố định */
   margin: 0 auto; /* Căn giữa theo chiều ngang */
   padding: 20px; /* Khoảng cách từ mép */
@@ -54,7 +58,6 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  min-height: 100vh;
 }  
 .page-content {
   width: 210mm;

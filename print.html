@@ -6,9 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Trang In</title>
     <link rel="stylesheet" href="print.css">
+    <link rel="icon" href="iconinv.ico" type="image/x-icon">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
 </head>
 
 <body>
@@ -16,6 +18,7 @@
     <button onclick="printPDF()">In PDF</button>
 
     <script>
+        
         // Lấy nội dung từ localStorage
         const content = localStorage.getItem("contentToPrint");
         const  print_target = document.getElementById("print-target");
@@ -53,6 +56,7 @@
             // });
             const { jsPDF } = window.jspdf;
             const pdf = new jsPDF();
+            
             html2canvas(print_target, {
                 scrollY: 0,
                 scrollX: 0,
