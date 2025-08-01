@@ -64,8 +64,8 @@ add_new_item_btn.addEventListener('click',function(){
         thutu = thutu+1;
         product_id_cell.textContent = thutu;
         product_name_cell.textContent = product_name.value;
-        product_price_cell.textContent = Number(product_price.value).toLocaleString("fr-FR");
-        product_quantity_cell.textContent = Number(product_quantity.value).toLocaleString("fr-FR");
+        product_price_cell.textContent = Number(product_price.value).toLocaleString("en-US");
+        product_quantity_cell.textContent = Number(product_quantity.value).toLocaleString("en-US");
         //nhập các giá trị vừa điền vào biến đối tượng (để lưu vào cơ sở dữ liệu)
         product_object["user_id"] = user_id;
         product_object["user_name"] = user_name;

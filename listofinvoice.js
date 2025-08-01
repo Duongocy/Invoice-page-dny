@@ -70,7 +70,7 @@ function update_invoice_list_to_table(invoices) {
         hoadonid.textContent = hoadon.invoice_id;
         hoadontitle.textContent = hoadon.invoice_title;
         hoadoncustomer.textContent = hoadon.customer;
-        hoadonamount.textContent = Number(hoadon.amount).toLocaleString("fr-FR");
+        hoadonamount.textContent = Number(hoadon.amount).toLocaleString("en-US");
         hoadondate.textContent = hoadon.invoice_date;
 
         //tạo nút view detail
@@ -143,9 +143,9 @@ function update_detail_of_invoice(products) {
         thu_tu = thu_tu + 1;    
         productno.textContent=thu_tu;
         productname.textContent =product.product_name;
-        productquantity.textContent=Number(product.quantity).toLocaleString("fr-FR");
-        productprice.textContent=Number(product.price).toLocaleString("fr-FR");
-        productamount.textContent=Number(product.amount).toLocaleString("fr-FR");
+        productquantity.textContent=Number(product.quantity).toLocaleString("en-US");
+        productprice.textContent=Number(product.price).toLocaleString("en-US");
+        productamount.textContent=Number(product.amount).toLocaleString("en-US");
         tongtien = Number(tongtien) + Number(product.amount);
         });
         //thêm 1 hàng cuối trong chi tiết hóa đơn để tính tổng tiền
@@ -155,7 +155,7 @@ function update_detail_of_invoice(products) {
         lastrow.insertCell(2);
         lastrow.insertCell(3);
         let totalamount = lastrow.insertCell(4);
-        totalamount.textContent = Number(tongtien).toLocaleString("fr-FR");
+        totalamount.textContent = Number(tongtien).toLocaleString("en-US");
 } 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // hàm xuất pdf khi nhấn nút print invoice
