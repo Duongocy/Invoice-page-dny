@@ -79,7 +79,7 @@
                 const y = 0;
 
                 pdf.addImage(imgData, "JPEG", x, y, imgWidth, imgHeight);
-                pdf.save("invoice.pdf");
+                pdf.save(`${document.getElementById('invoicetitle').textContent}.pdf`);
             });
         }
         
