@@ -48,8 +48,8 @@ body {
 /* độ rộng các cột bảng invoice  */
 #banginvoice th:nth-child(1),#banginvoice td:nth-child(1) {width: 15%;text-align: center;}
 #banginvoice th:nth-child(2),#banginvoice td:nth-child(2) {width: 20%;}
-#banginvoice th:nth-child(3),#banginvoice td:nth-child(3) {width: 15%;}
-#banginvoice th:nth-child(4),#banginvoice td:nth-child(4) {width: 10%;text-align: center;}
+#banginvoice th:nth-child(3),#banginvoice td:nth-child(3) {width: 15%;text-align: left;}
+#banginvoice th:nth-child(4),#banginvoice td:nth-child(4) {width: 10%;text-align: left;}
 #banginvoice th:nth-child(5),#banginvoice td:nth-child(5) {width: 30%;text-align: center;}
 #banginvoice th:nth-child(6),#banginvoice td:nth-child(6) {width: 10%;text-align: center;}
 /*--*/
