@@ -23,6 +23,9 @@ const loadingElement1 = document.getElementById('loading1');
 const shop_name = document.getElementById('shopname');
 const print_invoice_btn = document.getElementById('print-invoice');
 const detail_of_invoice = document.getElementById('detailofinvoice');
+const delete_invoice = document.getElementById('delete-invoice');
+
+let invoiceid = 1;
 // Hiện spinner
 loadingElement.style.display = 'block';
 bang_invoice.style.display = 'none';
@@ -101,7 +104,7 @@ function update_invoice_list_to_table(invoices) {
                
 
         //Lại dùng phương thức fetch để Lấy bảng chi tiết hóa đơn theo ID của hóa đơn
-        const invoiceid = hoadon.invoice_id;
+        invoiceid = hoadon.invoice_id;
         let request_string = 'https://invoice-sever.onrender.com/Invoice?yeucau=chitiethoadon&invid=' + String(invoiceid);
             fetch(request_string, {
                 method: 'GET',
@@ -170,4 +173,29 @@ print_invoice_btn.addEventListener('click', async () => {
     const data = document.getElementById("print-area").innerHTML;
     localStorage.setItem("contentToPrint", data);
     window.open("print.html", "_blank");
+});
+delete_invoice.addEventListener('click', async () => {
+        let request_string = 'https://invoice-sever.onrender.com/Invoice?yeucau=xoahoadon&invid=' + String(invoiceid);
+            fetch(request_string, {
+                method: 'GET',
+                headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
+            })
+                .then(function (response) {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(function (data) {
+                    // Ẩn spinner và hiển thị nội dung
+                    loadingElement1.style.display = 'none';
+                    bang_chi_tiet_invoice.style.display = 'table';
+                    console.log(data);//đã lấy được bảng chi tiết của từng hóa đơn
+                    update_detail_of_invoice(data);//hiển thị chi tiết của từng hóa đơn lên bảng bên phần Detail Of Invoice
+                })
+                .catch(function (error) {
+                    console.error('Error:', error.message); // In ra thông điệp lỗi
+                });
 });
