@@ -24,6 +24,11 @@ const shop_name = document.getElementById('shopname');
 const print_invoice_btn = document.getElementById('print-invoice');
 const detail_of_invoice = document.getElementById('detailofinvoice');
 const delete_invoice = document.getElementById('delete-invoice');
+const list_invoice = document.getElementById('listofinvoice');
+const detail_invoice = document.getElementById('detailofinvoice');
+//đặt chiều rộng phần list of invoice bằng độ rộng màn hình lúc mới load
+list_invoice.classList.add('width97');
+
 
 let invoiceid = 1;
 // Hiện spinner
@@ -93,13 +98,16 @@ function update_invoice_list_to_table(invoices) {
             }
             //Hiện detail of invoice 
             detail_of_invoice.classList.remove('hidden');
+            list_invoice.classList.remove('width97');
+            list_invoice.classList.add('width62');
+            detail_invoice.classList.add('width35');
             // Hiện spinner
             loadingElement1.style.display = 'block';
             bang_chi_tiet_invoice.style.display = 'none';
             //hiển thị các thông tin cơ bản của hóa đơn 
-            invoicecustomer.textContent = 'Customer name : '+ hoadon.customer;    
-            titleinvoice.textContent = 'Invoice Title : ' + hoadon.invoice_title;
-            shop_name.textContent = 'Shop : ' + user_name;
+            invoicecustomer.textContent = hoadon.customer;    
+            titleinvoice.textContent = hoadon.invoice_title;
+            shop_name.textContent = user_name;
             datecreate.textContent =hoadon.invoice_date;
                
 
@@ -193,7 +201,11 @@ delete_invoice.addEventListener('click', async () => {
                     loadingElement1.style.display = 'none';
                     bang_chi_tiet_invoice.style.display = 'table';
                     console.log(data);//đã lấy được bảng chi tiết của từng hóa đơn
-                    update_detail_of_invoice(data);//hiển thị chi tiết của từng hóa đơn lên bảng bên phần Detail Of Invoice
+                    detail_invoice.classList.add('hidden');
+                    list_invoice.classList.add('width97');
+                    location.reload();
+                    alert('Đã xóa hóa đơn thành công');
+                    // update_detail_of_invoice(data);
                 })
                 .catch(function (error) {
                     console.error('Error:', error.message); // In ra thông điệp lỗi
