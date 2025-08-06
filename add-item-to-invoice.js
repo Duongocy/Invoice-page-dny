@@ -46,6 +46,7 @@ add_new_item_btn.addEventListener('click',function(){
         let product_name_cell = new_row.insertCell(1);
         let product_price_cell = new_row.insertCell(2);
         let product_quantity_cell = new_row.insertCell(3);
+        let delete_btn = new_row.insertCell(4);
 
         //điền các giá trị vào ô
         thutu = thutu+1;
@@ -53,6 +54,13 @@ add_new_item_btn.addEventListener('click',function(){
         product_name_cell.textContent = product_name.value;
         product_price_cell.textContent = Number(product_price.value).toLocaleString("en-US");
         product_quantity_cell.textContent = Number(product_quantity.value).toLocaleString("en-US");
+
+        //tạo nút delete
+        let deletebtn = document.createElement('button');
+        deletebtn.textContent = '-';
+        deletebtn.classList.add('delbtn');
+        delete_btn.appendChild(deletebtn);
+
         //nhập các giá trị vừa điền vào biến đối tượng (để lưu vào cơ sở dữ liệu)
         
         product_object["user_id"] = user_id;
@@ -76,6 +84,11 @@ add_new_item_btn.addEventListener('click',function(){
         //chuyển con trỏ lại ô produc name
         product_name.focus();
         submit_button.classList.remove('hidden');
+
+        //hàm cho nút xóa dòng 
+        deletebtn.addEventListener("click", function () { 
+            new_row.remove();
+        })
     }
 })
 

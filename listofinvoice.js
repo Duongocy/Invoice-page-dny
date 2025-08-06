@@ -29,8 +29,10 @@ const detail_invoice = document.getElementById('detailofinvoice');
 //đặt chiều rộng phần list of invoice bằng độ rộng màn hình lúc mới load
 list_invoice.classList.add('width97');
 
-
+//khai báo 1 biến toàn cục để phục vụ cho nút delete 
 let invoiceid = 1;
+//Khai báo 1 biến khác phục vụ chức năng edit
+let data_invoice = {};
 // Hiện spinner
 loadingElement.style.display = 'block';
 bang_invoice.style.display = 'none';
@@ -130,7 +132,8 @@ function update_invoice_list_to_table(invoices) {
                     // Ẩn spinner và hiển thị nội dung
                     loadingElement1.style.display = 'none';
                     bang_chi_tiet_invoice.style.display = 'table';
-                    console.log(data);//đã lấy được bảng chi tiết của từng hóa đơn
+                    data_invoice = data;
+                    console.log(data_invoice);//đã lấy được bảng chi tiết của từng hóa đơn
                     update_detail_of_invoice(data);//hiển thị chi tiết của từng hóa đơn lên bảng bên phần Detail Of Invoice
                 })
                 .catch(function (error) {
