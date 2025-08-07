@@ -95,6 +95,8 @@ add_new_item_btn.addEventListener('click',function(){
 //hàm cho nút submit
 submit_button.addEventListener('click',function(){
     // Gửi mảng đối tượng đến RESTful API
+    submit_button.textContent = "Saving.."
+    submit_button.style.background = 'linear-gradient(135deg, #c4e40d, #1ff303)';
     if (product_aray.length>0){
         fetch('https://invoice-sever.onrender.com/Invoice', {
             method: 'POST',
@@ -112,6 +114,7 @@ submit_button.addEventListener('click',function(){
         .then(data => {
             console.log('Lưu invoice thành công :', data);
             submit_button.textContent = "Save OK!"
+            submit_button.style.background = 'linear-gradient(135deg, #ff416c, #ff4b2b)';
             //hien thi lai 1 so thu : 
             //xóa bảng item 
             while(new_item_table_body.rows.length>0){

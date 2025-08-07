@@ -154,6 +154,9 @@ body{
     align-items: center;
     margin-top:25px;
 }
+.submit-new-invoice-btn-yellow {
+    background: linear-gradient(135deg, #c4e40d, #1ff303);
+}
 #submit-new-invoice-btn{
     height: 40px;
     width: 100%;
