@@ -33,6 +33,7 @@ list_invoice.classList.add('width97');
 let invoiceid = 1;
 //Khai báo 1 biến khác phục vụ chức năng edit
 let data_invoice = {};
+let ten_hoa_don = '';
 // Hiện spinner
 loadingElement.style.display = 'block';
 bang_invoice.style.display = 'none';
@@ -109,6 +110,7 @@ function update_invoice_list_to_table(invoices) {
             //hiển thị các thông tin cơ bản của hóa đơn 
             invoicecustomer.textContent = hoadon.customer;    
             titleinvoice.textContent = hoadon.invoice_title;
+            ten_hoa_don = hoadon.invoice_title;
             shop_name.textContent = user_name;
             datecreate.textContent =hoadon.invoice_date;
                
@@ -186,6 +188,7 @@ print_invoice_btn.addEventListener('click', async () => {
     window.open("print.html", "_blank");
 });
 delete_invoice.addEventListener('click', async () => {
+    if (confirm(`Delete ${ten_hoa_don}?`)) {
         let request_string = 'https://invoice-sever.onrender.com/Invoice?yeucau=xoahoadon&invid=' + String(invoiceid);
             fetch(request_string, {
                 method: 'GET',
@@ -213,4 +216,9 @@ delete_invoice.addEventListener('click', async () => {
                 .catch(function (error) {
                     console.error('Error:', error.message); // In ra thông điệp lỗi
                 });
+    }
+    else {
+        console.log("Đã hủy xóa.");
+    }
+        
 });
