@@ -99,7 +99,7 @@ body {
 }
 #creatinvoicebtn,#print-invoice,#delete-invoice {
     height: 40px;
-    width: 20%;
+    width: 35%;
     background: linear-gradient(135deg, #07f02e, #c1eb07);
     color: white;
     padding: 14px 28px;
@@ -327,7 +327,7 @@ th,td {
     #print-invoice,#delete-invoice {
         height: 40px;
         width: 80%;
-        background: linear-gradient(135deg, #ff416c, #ff4b2b);
+        background: linear-gradient(135deg, #07f02e, #c1eb07);
         color: white;
         padding: 15px;
         font-size: 1.1rem;
