@@ -123,7 +123,8 @@ submit_button.addEventListener('click',function(){
             product_name.value="";
             product_price.value="";
             product_quantity.value="";
-            product_aray=[];
+            product_aray = [];
+            window.open("listofinvoice.html");
         })
         .catch(error => {
             console.error('Lỗi khi lưu invoice :', error);
