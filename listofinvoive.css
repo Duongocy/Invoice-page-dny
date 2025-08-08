@@ -8,9 +8,6 @@ body {
     height:97vh;
 }
 /* Phần liệt kê danh sách các invoice theo user */
-.listofinvoice {
-    /* width: 62vw; */
-}
 /*--*/
 .co-title {
     font-size: 30px;
@@ -102,11 +99,33 @@ body {
 }
 #creatinvoicebtn,#print-invoice,#delete-invoice {
     height: 40px;
-    width: 40%;
-    background: linear-gradient(135deg, #ff416c, #ff4b2b);
+    width: 20%;
+    background: linear-gradient(135deg, #07f02e, #c1eb07);
     color: white;
     padding: 14px 28px;
-    margin-top: 5px;
+    margin-top: 25px;
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(255, 75, 43, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    line-height: 1.1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+#print-invoice,#delete-invoice {
+    height: 40px;
+    width: 40%;
+    background: linear-gradient(135deg, #07f02e, #c1eb07);
+    color: white;
+    padding: 14px 28px;
+    margin-top: 25px;
     margin-bottom: 5px;
     font-size: 1.1rem;
     font-weight: bold;
@@ -132,7 +151,7 @@ body {
 .detailofinvoice {
     /* width: 35vw; */
     height:100%;
-    border-left: solid 1px rgba(2, 3, 18, 0.867);
+    border-left: solid 2px rgba(2, 3, 18, 0.867);
     display: flex;
     flex-direction: column;
     align-items: center;
