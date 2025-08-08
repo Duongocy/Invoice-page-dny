@@ -124,7 +124,7 @@ submit_button.addEventListener('click',function(){
             product_price.value="";
             product_quantity.value="";
             product_aray = [];
-            window.open("listofinvoice.html");
+            window.location.href = "/listofinvoice.html";
         })
         .catch(error => {
             console.error('Lỗi khi lưu invoice :', error);
