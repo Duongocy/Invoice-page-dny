@@ -124,7 +124,7 @@ submit_button.addEventListener('click',function(){
             product_price.value="";
             product_quantity.value="";
             product_aray = [];
-            window.location.href = "/listofinvoice.html";
+            window.open("/Invoice-page-dny/listofinvoice.html", "_self");
         })
         .catch(error => {
             console.error('Lỗi khi lưu invoice :', error);
