@@ -185,7 +185,7 @@ function update_detail_of_invoice(products) {
 print_invoice_btn.addEventListener('click', async () => {
     const data = document.getElementById("print-area").innerHTML;
     localStorage.setItem("contentToPrint", data);
-    window.open("/Invoice-page-dny/listofinvoice.html", "_self");
+    window.open("./listofinvoice.html", "_self");
 });
 delete_invoice.addEventListener('click', async () => {
     if (confirm(`Delete ${ten_hoa_don}?`)) {
