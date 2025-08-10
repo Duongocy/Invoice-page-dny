@@ -70,9 +70,9 @@ add_new_item_btn.addEventListener('click',function(){
         product_object["user_id"] = user_id;
         product_object["user_name"] = user_name;
         product_object["invoice_id"]=invoice_id;
-        product_object["invoice_title"] = new_invoice_title;
+        product_object["invoice_title"] = old_invoice_title;
         product_object["invoice_date"] = invoice_date;
-        product_object["customer"] = new_customer;
+        product_object["customer"] = old_customer;
         product_object["product_name"]=product_name.value;
         product_object["price"]=product_price.value;
         product_object["quantity"]=product_quantity.value;
