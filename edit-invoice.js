@@ -185,4 +185,5 @@ function update_add_item_table(data) {
 
 function deleterow(rowindex,data){
     data.splice(rowindex, 1);
+    console.log('Cập nhật nè : ',data);
 }
