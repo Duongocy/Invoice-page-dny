@@ -5,6 +5,7 @@ const invoice_id = sessionStorage.getItem('invoice_id');
 const invoice_date = sessionStorage.getItem('invoice_date');
 const new_invoice_title = sessionStorage.getItem('new_invoice_title');
 const new_customer = sessionStorage.getItem('new_customer');
+const detail_invoice = sessionStorage.getItem('detai_invoice');
 //////////////////////////////////////////////////////////////////////////////
 console.log('User ID:', user_id); // Có thể truy cập user_id ở đây
 console.log('User name:', user_name); // Có thể truy cập user_id ở đây
@@ -12,6 +13,7 @@ console.log('Invoice ID:', invoice_id); // Có thể truy cập user_id ở đâ
 console.log('Invoice creating date :', invoice_date); // Có thể truy cập user_id ở đây
 console.log('Invoice title:', new_invoice_title); // Có thể truy cập user_id ở đây
 console.log('Customer :', new_customer); // Có thể truy cập user_id ở đây
+console.log('Chi tiết invoice :', detail_invoice);
 let create_new_invoice_btn = document.getElementById('createnewinvoicebutton');
 let invoice_title = document.getElementById('newinvoice-title');
 let invoice_customer = document.getElementById('customer-name');

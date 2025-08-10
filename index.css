@@ -68,6 +68,9 @@ body {
 #confirm-input-pass {
   display: none;
 }
+a{
+  text-decoration: none;
+}
 
 /* Phần dành cho màn hình điện thoại */
 @media only screen and (max-width: 768px) {
@@ -90,4 +93,7 @@ body {
     border-radius: 10px;
     background-color: #213221;
   }
+a {
+  text-decoration: none;
+ }
 }

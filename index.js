@@ -1,38 +1,40 @@
+//Khai báo các phần tử html
 const login_button = document.getElementById("login-button");
 const input_name = document.getElementById("input-name");
 const input_email = document.getElementById("input-email");
 const input_pass = document.getElementById("input-pass");
 const confirm_input_pass = document.getElementById("confirm-input-pass");
 const login_question = document.getElementById("login-question");
-
+//Mặc định chỉ hiển thị Login nên ẩn đi ô Name và re-input pass
 input_name.style.display = "none";
 confirm_input_pass.style.display = "none";
-let login_status = true;
-// Chuyển đổi trạng thái đăng nhập và tạo user mới 
+//Biến login_status để lưu trạng thái người dùng muốn đăng nhập hay đăng ký new user
+let login_status = true; //true = đăng nhập
+// Chuyển đổi trạng thái đăng nhập và tạo user mới khi nhấn vào câu hỏi "bạn chưa có account hả???" 
 login_question.addEventListener('click', function () {
     if (login_status) {
         login_question.textContent = "Already have an account?";
         login_button.textContent = "Create Account";
-        input_name.style.display = "flex";
-        confirm_input_pass.style.display = "flex";
-        login_status = !login_status;
+        input_name.style.display = "flex";//hiển thị lại ô nhập User name
+        confirm_input_pass.style.display = "flex"; //hiển thị ô nhập lại pass
+        login_status = !login_status; //chuyển chế độ của biến login_status 
     }
-    else  {
+    else  {//đây là trường hợp lại chọn login 
         login_question.textContent = "Don't have an account?";
         login_button.textContent = "Sign In";
-        input_name.style.display = "none";
-        confirm_input_pass.style.display = "none";
-        login_status = !login_status;
+        input_name.style.display = "none";//lại ẩn ô user name
+        confirm_input_pass.style.display = "none";//lại ẩn ô nhập lại pass
+        login_status = !login_status;//lại đổi giá trị biến login_status 
     }
 })
 
 //check ngay lúc đang nhập tên user
-let thoi_gian_cho;
+let thoi_gian_cho;//biến chứa timer để check tên user name đã tồn tại hay chưa
 input_name.addEventListener('input', async () => {
     clearTimeout(thoi_gian_cho);//xóa bộ đếm thời gian
     thoi_gian_cho = setTimeout(async function() {
         const name_inputting = input_name.value.trim(); //lây tên đang được nhập vào 
-        console.log(`https://api-create-new-user.onrender.com/Invoice?username=${name_inputting}`);
+        console.log(`https://api-create-new-user.onrender.com/Invoice?username=${name_inputting}`);//hiển thị tên được nhập vào 
         const res = await fetch(`https://api-create-new-user.onrender.com/invoice?username=${name_inputting}&kieuyeucau=checkusertontai`); //gởi tên đó đến API   
         const data = await res.json(); //nhận lại phản hồi từ api
         console.log("Data nhận về là : ", data);   
@@ -42,7 +44,7 @@ input_name.addEventListener('input', async () => {
         else {
             input_name.style.color = "green";
         }
-    },1000)
+    },1000) //hàm bên trong timer sẽ chạy cứ mỗi sau 1000ms (1s) 
 })
 
 //Tạo user mới 

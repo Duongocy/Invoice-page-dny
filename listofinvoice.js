@@ -24,6 +24,7 @@ const shop_name = document.getElementById('shopname');
 const print_invoice_btn = document.getElementById('print-invoice');
 const detail_of_invoice = document.getElementById('detailofinvoice');
 const delete_invoice = document.getElementById('delete-invoice');
+const edit_invoice = document.getElementById('edit-invoice');
 const list_invoice = document.getElementById('listofinvoice');
 const detail_invoice = document.getElementById('detailofinvoice');
 //đặt chiều rộng phần list of invoice bằng độ rộng màn hình lúc mới load
@@ -32,7 +33,7 @@ list_invoice.classList.add('width97');
 //khai báo 1 biến toàn cục để phục vụ cho nút delete 
 let invoiceid = 1;
 //Khai báo 1 biến khác phục vụ chức năng edit
-let data_invoice = {};
+let data_invoice = {}; //biến này dùng để phục vụ chức năng edit
 let ten_hoa_don = '';
 // Hiện spinner
 loadingElement.style.display = 'block';
@@ -134,7 +135,7 @@ function update_invoice_list_to_table(invoices) {
                     // Ẩn spinner và hiển thị nội dung
                     loadingElement1.style.display = 'none';
                     bang_chi_tiet_invoice.style.display = 'table';
-                    data_invoice = data;
+                    data_invoice = data;//gán toàn bộ bảng chi tiết invoice cho biến toàn cục data_invoice để phục vụ edit invoice
                     console.log(data_invoice);//đã lấy được bảng chi tiết của từng hóa đơn
                     update_detail_of_invoice(data);//hiển thị chi tiết của từng hóa đơn lên bảng bên phần Detail Of Invoice
                 })
@@ -220,5 +221,10 @@ delete_invoice.addEventListener('click', async () => {
     else {
         console.log("Đã hủy xóa.");
     }
+        
+});
+edit_invoice.addEventListener('click', async () => {
+    sessionStorage.setItem('detail_invoice', data_invoice);   
+    window.open("/Invoice-page-dny/add-item-to-invoice.html", "_self");
         
 });
