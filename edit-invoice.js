@@ -172,7 +172,8 @@ function update_add_item_table(data) {
         product_aray.push(Object.assign({}, product_object));//dùng toán tử object.sssign
         
         //tạo nút delete
-        let deletebtn = document.createElement('button');
+        let deletebtn = `deletebtn ${thutu}`;
+        deletebtn = document.createElement('button');
         deletebtn.textContent = '-';
         deletebtn.classList.add('delbtn');
         delete_btn.appendChild(deletebtn);
