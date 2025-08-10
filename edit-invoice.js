@@ -34,6 +34,7 @@ product_object ={};
 
 //đưa các thông tin của hóa đơn cần edit vào bảng
 update_add_item_table(detail_invoice);
+console.log('Mảng vừa được cập nhật : ', product_aray);
 //khai báo nút submit
 let submit_button = document.getElementById('submit-new-invoice-btn');
 
