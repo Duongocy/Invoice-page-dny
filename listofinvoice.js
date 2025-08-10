@@ -136,7 +136,7 @@ function update_invoice_list_to_table(invoices) {
                     loadingElement1.style.display = 'none';
                     bang_chi_tiet_invoice.style.display = 'table';
                     data_invoice = data;//gán toàn bộ bảng chi tiết invoice cho biến toàn cục data_invoice để phục vụ edit invoice
-                    console.log(data_invoice);//đã lấy được bảng chi tiết của từng hóa đơn
+                    console.log('Biến data_invoice : ',data_invoice);//đã lấy được bảng chi tiết của từng hóa đơn
                     update_detail_of_invoice(data);//hiển thị chi tiết của từng hóa đơn lên bảng bên phần Detail Of Invoice
                 })
                 .catch(function (error) {
