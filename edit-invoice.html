@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="edit-invoice.css">
+    <link rel="icon" href="iconinv.ico" type="image/x-icon">
+</head>
+
+<body>
+    <!-- Phần tạo new invoice -->
+    <div class="new-invoice-page">
+        <div class="co-title">
+            +Add item to invoice
+        </div>
+        <div class="new-invoice">
+            <div class="new-invoice-add-item" id="add-item-to-invoice">
+                <!-- Thông tin item -->
+
+                <div class="input-new-product-information">
+                    <input id="new-item-name" type="text" placeholder="Product name" required>
+                    <input id="new-item-price" type="number" placeholder="Price" required>
+                    <input id="new-item-quantity" type="number" placeholder="Quantity" required>
+                    <button id="add-new-item-btn">+ Add Item</button>
+                </div>
+                <div class="new-invoice-container">
+                    <table id="new-item-table">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Product name</th>
+                                <th>Price</th>
+                                <th>Quantity</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Các item hàng hóa sẽ được hiển thị ở đây -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="submit-new-invoice-container">
+            <button id="submit-new-invoice-btn">Submit Invoice</button>
+        </div>
+    </div>
+    <script src="edit-invoice.js"></script>
+</body>
+
+</html>
