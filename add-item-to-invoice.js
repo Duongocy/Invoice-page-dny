@@ -28,6 +28,10 @@ let product_quantity = document.getElementById('new-item-quantity');
 let add_item_container = document.getElementById('add-item-to-invoice');
 let tao_invoice = document.getElementById('tao-invoice');
 
+let thutu = 0;//khai báo 1 biến thứ tự để điền vào cột đầu tiên (cột No)
+product_aray=[];
+product_object ={};
+
 //đưa các thông tin của hóa đơn cần edit vào bảng
 update_add_item_table(detail_invoice);
 //khai báo nút submit
@@ -37,9 +41,7 @@ let submit_button = document.getElementById('submit-new-invoice-btn');
 submit_button.classList.add('hidden');
 //Hàm cho nút nhấn Create New Invoice
 //Hàm cho nút Add Item
-product_aray=[];
-product_object ={};
-let thutu = 0;//khai báo 1 biến thứ tự để điền vào cột đầu tiên (cột No)
+
 add_new_item_btn.addEventListener('click',function(){
     //Việc cần làm khi nhấn nút add item
     if ((product_name.value.length!=0)&&(product_price.value.length!=0)&&(product_quantity.value.length!=0)){
