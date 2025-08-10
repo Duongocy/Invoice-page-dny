@@ -224,7 +224,7 @@ delete_invoice.addEventListener('click', async () => {
         
 });
 edit_invoice.addEventListener('click', async () => {
-    sessionStorage.setItem('detail_invoice', data_invoice);   
+    sessionStorage.setItem('detail_invoice', JSON.stringify(data_invoice));   
     window.open("/Invoice-page-dny/add-item-to-invoice.html", "_self");
         
 });
