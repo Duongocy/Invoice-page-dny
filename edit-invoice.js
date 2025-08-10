@@ -138,6 +138,11 @@ submit_button.addEventListener('click',function(){
     }
 })
 function update_add_item_table(data) {
+    product_aray=[];
+    product_object ={};
+    while(new_item_table_body.rows.length>0){
+                new_item_table_body.deleteRow(0);
+            }
     data.forEach(element => {
         let new_row = new_item_table_body.insertRow();
         let product_id_cell = new_row.insertCell(0);
@@ -171,8 +176,13 @@ function update_add_item_table(data) {
         deletebtn.classList.add('delbtn');
         delete_btn.appendChild(deletebtn);
         deletebtn.addEventListener("click", function () { 
-            new_row.remove();
-            console.log('Xóa hàng ',product_id_cell.textContent);
+            // new_row.remove();
+            // console.log('Xóa hàng ',product_id_cell.textContent);
+            deleterow(thutu - 1, product_aray);
         })
     });
+}
+
+function deleterow(rowindex,data){
+    data.splice(rowindex, 1);
 }
