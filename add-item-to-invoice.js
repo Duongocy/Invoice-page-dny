@@ -157,5 +157,8 @@ function update_add_item_table(data) {
         deletebtn.textContent = '-';
         deletebtn.classList.add('delbtn');
         delete_btn.appendChild(deletebtn);
+        deletebtn.addEventListener("click", function () { 
+            new_row.remove();
+        })
     });
 }
