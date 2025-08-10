@@ -3,16 +3,16 @@ const user_id = sessionStorage.getItem('user_id');
 const user_name = sessionStorage.getItem('user_name');
 const invoice_id = sessionStorage.getItem('invoice_id');
 const invoice_date = sessionStorage.getItem('invoice_date');
-const new_invoice_title = sessionStorage.getItem('invoice_title');
-const new_customer = sessionStorage.getItem('invoice_customer');
+const old_invoice_title = sessionStorage.getItem('invoice_title');
+const old_customer = sessionStorage.getItem('invoice_customer');
 const detail_invoice = JSON.parse(sessionStorage.getItem('detail_invoice'));
 //////////////////////////////////////////////////////////////////////////////
 console.log('User ID:', user_id); // Có thể truy cập user_id ở đây
 console.log('User name:', user_name); // Có thể truy cập user_id ở đây
 console.log('Invoice ID:', invoice_id); // Có thể truy cập user_id ở đây
 console.log('Invoice creating date :', invoice_date); // Có thể truy cập user_id ở đây
-console.log('Invoice title:', new_invoice_title); // Có thể truy cập user_id ở đây
-console.log('Customer :', new_customer); // Có thể truy cập user_id ở đây
+console.log('Invoice title:', old_invoice_title); // Có thể truy cập user_id ở đây
+console.log('Customer :', old_customer); // Có thể truy cập user_id ở đây
 console.log('Chi tiết invoice :', detail_invoice);
 let create_new_invoice_btn = document.getElementById('createnewinvoicebutton');
 let invoice_title = document.getElementById('newinvoice-title');
@@ -152,6 +152,18 @@ function update_add_item_table(data) {
         product_price_cell.textContent = Number(element.price).toLocaleString("en-US");
         product_quantity_cell.textContent = Number(element.quantity).toLocaleString("en-US");
 
+        product_object["user_id"] = user_id;
+        product_object["user_name"] = user_name;
+        product_object["invoice_id"]=invoice_id;
+        product_object["invoice_title"] = old_invoice_title;
+        product_object["invoice_date"] = invoice_date;
+        product_object["customer"] = old_customer;
+        product_object["product_name"]=element.product_name;
+        product_object["price"]=element.price;
+        product_object["quantity"]=element.quantity;
+        console.log("Đối tượng vừa thêm vào : ", product_object);
+        product_aray.push(Object.assign({}, product_object));//dùng toán tử object.sssign
+        
         //tạo nút delete
         let deletebtn = document.createElement('button');
         deletebtn.textContent = '-';

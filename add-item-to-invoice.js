@@ -3,8 +3,8 @@ const user_id = sessionStorage.getItem('user_id');
 const user_name = sessionStorage.getItem('user_name');
 const invoice_id = sessionStorage.getItem('invoice_id');
 const invoice_date = sessionStorage.getItem('invoice_date');
-const new_invoice_title = sessionStorage.getItem('invoice_title');
-const new_customer = sessionStorage.getItem('invoice_customer');
+const new_invoice_title = sessionStorage.getItem('new_invoice_title');
+const new_customer = sessionStorage.getItem('new_customer');
 const detail_invoice = JSON.parse(sessionStorage.getItem('detail_invoice'));
 //////////////////////////////////////////////////////////////////////////////
 console.log('User ID:', user_id); // Có thể truy cập user_id ở đây
@@ -32,8 +32,6 @@ let thutu = 0;//khai báo 1 biến thứ tự để điền vào cột đầu ti
 product_aray=[];
 product_object ={};
 
-//đưa các thông tin của hóa đơn cần edit vào bảng
-update_add_item_table(detail_invoice);
 //khai báo nút submit
 let submit_button = document.getElementById('submit-new-invoice-btn');
 
@@ -136,30 +134,3 @@ submit_button.addEventListener('click',function(){
         });
     }
 })
-function update_add_item_table(data) {
-    data.forEach(element => {
-        let new_row = new_item_table_body.insertRow();
-        let product_id_cell = new_row.insertCell(0);
-        let product_name_cell = new_row.insertCell(1);
-        let product_price_cell = new_row.insertCell(2);
-        let product_quantity_cell = new_row.insertCell(3);
-        let delete_btn = new_row.insertCell(4);
-
-        //điền các giá trị vào ô
-        thutu = thutu+1;
-        product_id_cell.textContent = thutu;
-        product_name_cell.textContent = element.product_name;
-        product_price_cell.textContent = Number(element.price).toLocaleString("en-US");
-        product_quantity_cell.textContent = Number(element.quantity).toLocaleString("en-US");
-
-        //tạo nút delete
-        let deletebtn = document.createElement('button');
-        deletebtn.textContent = '-';
-        deletebtn.classList.add('delbtn');
-        delete_btn.appendChild(deletebtn);
-        deletebtn.addEventListener("click", function () { 
-            new_row.remove();
-            console.log('Xóa hàng ',product_id_cell.textContent);
-        })
-    });
-}
