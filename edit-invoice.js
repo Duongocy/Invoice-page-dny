@@ -92,6 +92,7 @@ add_new_item_btn.addEventListener('click',function(){
         //hàm cho nút xóa dòng 
         deletebtn.addEventListener("click", function () { 
             new_row.remove();
+            console.log('Đã xóa dòng ', thutu);
         })
     }
 })
