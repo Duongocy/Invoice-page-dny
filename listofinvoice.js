@@ -236,5 +236,4 @@ edit_invoice.addEventListener('click', async () => {
     sessionStorage.setItem('invoice_title', invoicetitle);
     sessionStorage.setItem('invoice_date', invoicedate);
     window.open("/Invoice-page-dny/edit-invoice.html", "_self");
-        
 });
