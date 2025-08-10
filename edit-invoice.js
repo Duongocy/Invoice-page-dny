@@ -172,15 +172,14 @@ function update_add_item_table(data) {
         product_aray.push(Object.assign({}, product_object));//dùng toán tử object.sssign
         
         //tạo nút delete
-        let deletebtn = `deletebtn ${thutu}`;
-        deletebtn = document.createElement('button');
+        let deletebtn = document.createElement('button');
         deletebtn.textContent = '-';
         deletebtn.classList.add('delbtn');
         delete_btn.appendChild(deletebtn);
         deletebtn.addEventListener("click", function () { 
             // new_row.remove();
             // console.log('Xóa hàng ',product_id_cell.textContent);
-            deleterow(thutu - 1, product_aray);
+            deleterow(product_id_cell.value-1, product_aray);
         })
     });
 }
