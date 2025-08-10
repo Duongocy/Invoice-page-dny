@@ -28,8 +28,8 @@ let product_quantity = document.getElementById('new-item-quantity');
 let add_item_container = document.getElementById('add-item-to-invoice');
 let tao_invoice = document.getElementById('tao-invoice');
 
-//ẩn phần add item
-
+//đưa các thông tin của hóa đơn cần edit vào bảng
+update_add_item_table(detail_invoice);
 //khai báo nút submit
 let submit_button = document.getElementById('submit-new-invoice-btn');
 
@@ -134,3 +134,26 @@ submit_button.addEventListener('click',function(){
         });
     }
 })
+function update_add_item_table(data) {
+    data.forEach(element => {
+        let new_row = new_item_table_body.insertRow();
+        let product_id_cell = new_row.insertCell(0);
+        let product_name_cell = new_row.insertCell(1);
+        let product_price_cell = new_row.insertCell(2);
+        let product_quantity_cell = new_row.insertCell(3);
+        let delete_btn = new_row.insertCell(4);
+
+        //điền các giá trị vào ô
+        thutu = thutu+1;
+        product_id_cell.textContent = thutu;
+        product_name_cell.textContent = data.product_name;
+        product_price_cell.textContent = Number(data.price).toLocaleString("en-US");
+        product_quantity_cell.textContent = Number(data.quantity).toLocaleString("en-US");
+
+        //tạo nút delete
+        let deletebtn = document.createElement('button');
+        deletebtn.textContent = '-';
+        deletebtn.classList.add('delbtn');
+        delete_btn.appendChild(deletebtn);
+    });
+}
