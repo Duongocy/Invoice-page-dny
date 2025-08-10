@@ -148,9 +148,9 @@ function update_add_item_table(data) {
         //điền các giá trị vào ô
         thutu = thutu+1;
         product_id_cell.textContent = thutu;
-        product_name_cell.textContent = data.product_name;
-        product_price_cell.textContent = Number(data.price).toLocaleString("en-US");
-        product_quantity_cell.textContent = Number(data.quantity).toLocaleString("en-US");
+        product_name_cell.textContent = element.product_name;
+        product_price_cell.textContent = Number(element.price).toLocaleString("en-US");
+        product_quantity_cell.textContent = Number(element.quantity).toLocaleString("en-US");
 
         //tạo nút delete
         let deletebtn = document.createElement('button');
