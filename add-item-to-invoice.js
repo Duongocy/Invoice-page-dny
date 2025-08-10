@@ -3,8 +3,8 @@ const user_id = sessionStorage.getItem('user_id');
 const user_name = sessionStorage.getItem('user_name');
 const invoice_id = sessionStorage.getItem('invoice_id');
 const invoice_date = sessionStorage.getItem('invoice_date');
-const new_invoice_title = sessionStorage.getItem('new_invoice_title');
-const new_customer = sessionStorage.getItem('new_customer');
+const new_invoice_title = sessionStorage.getItem('invoicetitle');
+const new_customer = sessionStorage.getItem('invoicectm');
 const detail_invoice = JSON.parse(sessionStorage.getItem('detail_invoice'));
 //////////////////////////////////////////////////////////////////////////////
 console.log('User ID:', user_id); // Có thể truy cập user_id ở đây

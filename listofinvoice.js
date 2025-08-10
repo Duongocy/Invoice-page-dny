@@ -32,6 +32,9 @@ list_invoice.classList.add('width97');
 
 //khai báo 1 biến toàn cục để phục vụ cho nút delete 
 let invoiceid = 1;
+let invoicetitle = '';
+let invoicectm = '';
+let invoicedate = '';
 //Khai báo 1 biến khác phục vụ chức năng edit
 let data_invoice = {}; //biến này dùng để phục vụ chức năng edit
 let ten_hoa_don = '';
@@ -117,7 +120,10 @@ function update_invoice_list_to_table(invoices) {
                
 
         //Lại dùng phương thức fetch để Lấy bảng chi tiết hóa đơn theo ID của hóa đơn
-        invoiceid = hoadon.invoice_id;
+            invoiceid = hoadon.invoice_id;
+            invoicetitle = hoadon.invoice_title;
+            invoicectm = hoadon.customer;
+            invoicedate = hoadon.invoice_date;
         let request_string = 'https://invoice-sever.onrender.com/Invoice?yeucau=chitiethoadon&invid=' + String(invoiceid);
             fetch(request_string, {
                 method: 'GET',
@@ -224,7 +230,11 @@ delete_invoice.addEventListener('click', async () => {
         
 });
 edit_invoice.addEventListener('click', async () => {
-    sessionStorage.setItem('detail_invoice', JSON.stringify(data_invoice));   
+    sessionStorage.setItem('detail_invoice', JSON.stringify(data_invoice));
+    sessionStorage.setItem('invoice_id', invoiceid);
+    sessionStorage.setItem('invoice_customer', invoicectm);
+    sessionStorage.setItem('invoice_title', invoicetitle);
+    sessionStorage.setItem('invoice_date', invoicedate);
     window.open("/Invoice-page-dny/add-item-to-invoice.html", "_self");
         
 });
