@@ -178,7 +178,7 @@ function update_add_item_table(data) {
         delete_btn.appendChild(deletebtn);
         deletebtn.addEventListener("click", function () { 
             new_row.remove();
-            let chisodong = String(thutu - 1);
+            let chisodong = Object.assign(thutu-1);
             console.log('Chỉ số dòng :',chisodong);
             deleterow(Number(chisodong), product_aray);
             //thutu = 0;
