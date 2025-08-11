@@ -181,7 +181,7 @@ function update_add_item_table(data) {
             // deleterow(index, product_aray);
             //thutu = 0;
             //update_add_item_table(product_aray);
-            console.log('Chỉ số dòng : ', new_row.index);
+            console.log('Chỉ số dòng : ', new_row);
         })
     });
 }
