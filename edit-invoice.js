@@ -168,7 +168,7 @@ function update_add_item_table(data) {
         product_object["product_name"]=element.product_name;
         product_object["price"]=element.price;
         product_object["quantity"]=element.quantity;
-        console.log("Đối tượng vừa thêm vào : ", product_object);
+        console.log("Vừa thêm vào 1 đối tượng..");
         product_aray.push(Object.assign({}, product_object));//dùng toán tử object.sssign
         
         //tạo nút delete
