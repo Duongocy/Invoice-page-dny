@@ -144,7 +144,7 @@ function update_add_item_table(data) {
     while(new_item_table_body.rows.length>0){
                 new_item_table_body.deleteRow(0);
             }
-    data.forEach(element => {
+    data.forEach((element,index) => {
         let new_row = new_item_table_body.insertRow();
         let product_id_cell = new_row.insertCell(0);
         let product_name_cell = new_row.insertCell(1);
@@ -178,9 +178,7 @@ function update_add_item_table(data) {
         delete_btn.appendChild(deletebtn);
         deletebtn.addEventListener("click", function () { 
             new_row.remove();
-            let chisodong = Object.assign(thutu-1);
-            console.log('Chỉ số dòng :',chisodong);
-            deleterow(Number(chisodong), product_aray);
+            deleterow(index, product_aray);
             //thutu = 0;
             //update_add_item_table(product_aray);
         })
