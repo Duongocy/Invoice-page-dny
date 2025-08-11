@@ -177,9 +177,9 @@ function update_add_item_table(data) {
         deletebtn.classList.add('delbtn');
         delete_btn.appendChild(deletebtn);
         deletebtn.addEventListener("click", function () { 
-             new_row.remove();
-            // console.log('Xóa hàng ',product_id_cell.textContent);
-            deleterow(product_id_cell.value-1, product_aray);
+            new_row.remove();
+            deleterow(product_id_cell.value - 1, product_aray);
+            update_add_item_table(product_aray);
         })
     });
 }
