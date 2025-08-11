@@ -179,6 +179,7 @@ function update_add_item_table(data) {
         deletebtn.addEventListener("click", function () { 
             new_row.remove();
             deleterow(Number(new_row.cells[0].textContent), product_aray);
+            thutu = 0;
             update_add_item_table(product_aray);
             // console.log('Chỉ số dòng : ', Number(new_row.cells[0].textContent));
         })
