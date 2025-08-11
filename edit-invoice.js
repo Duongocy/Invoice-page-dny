@@ -178,9 +178,10 @@ function update_add_item_table(data) {
         delete_btn.appendChild(deletebtn);
         deletebtn.addEventListener("click", function () { 
             new_row.remove();
-            deleterow(index, product_aray);
+            // deleterow(index, product_aray);
             //thutu = 0;
             //update_add_item_table(product_aray);
+            console.log('Chỉ số dòng : ', new_row.index);
         })
     });
 }
