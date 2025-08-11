@@ -178,7 +178,8 @@ function update_add_item_table(data) {
         delete_btn.appendChild(deletebtn);
         deletebtn.addEventListener("click", function () { 
             new_row.remove();
-            deleterow(thutu - 1, product_aray);
+            let chisodong = String(thutu - 1);
+            deleterow(Number(chisodong), product_aray);
             //thutu = 0;
             //update_add_item_table(product_aray);
         })
