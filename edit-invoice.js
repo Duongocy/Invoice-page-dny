@@ -93,7 +93,9 @@ add_new_item_btn.addEventListener('click',function(){
         //hàm cho nút xóa dòng 
         deletebtn.addEventListener("click", function () { 
             new_row.remove();
-            console.log('Đã xóa dòng ', thutu);
+            deleterow(Number(new_row.cells[0].textContent), product_aray);
+            thutu = 0;
+            update_add_item_table(product_aray);
         })
     }
 })
