@@ -99,7 +99,7 @@ body {
     width: 50%;
     height: 35px;
 }
-#creatinvoicebtn,#print-invoice,#delete-invoice {
+#creatinvoicebtn,#print-invoice,#delete-invoice,#edit-invoice {
     height: 40px;
     width: 35%;
     background: linear-gradient(135deg, #07f02e, #c1eb07);
@@ -121,7 +121,7 @@ body {
     align-items: center;
     justify-content: center;
 }
-#print-invoice,#delete-invoice {
+#print-invoice,#delete-invoice,#edit-invoice {
     height: 40px;
     width: 40%;
     background: linear-gradient(135deg, #07f02e, #c1eb07);
@@ -144,7 +144,7 @@ body {
     justify-content: center;
 }
 
-#creatinvoicebtn:hover,#print-invoice:hover,#delete-invoice:hover {
+#creatinvoicebtn:hover,#print-invoice:hover,#delete-invoice:hover,#edit-invoice:hover {
     transform: scale(1.05);
     box-shadow: 0 12px 30px rgba(255, 65, 108, 0.5);
     background: linear-gradient(135deg, #ff4b2b, #ff416c);
@@ -326,7 +326,7 @@ th,td {
         justify-content: center;
     }
     #creatinvoicebtn,
-    #print-invoice,#delete-invoice {
+    #print-invoice,#delete-invoice,#edit-invoice {
         height: 40px;
         width: 80%;
         background: linear-gradient(135deg, #07f02e, #c1eb07);
