@@ -180,7 +180,7 @@ function update_add_item_table(data) {
             new_row.remove();
             deleterow(product_id_cell.value - 1, product_aray);
             //thutu = 0;
-            update_add_item_table(product_aray);
+            //update_add_item_table(product_aray);
         })
     });
 }
